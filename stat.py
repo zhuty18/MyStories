@@ -5,7 +5,7 @@ def write(info,f):
     print(info.strip())
 
 def stat(path,name,f):
-    if name.endswith(".md") and name!="README.md" and name!="字数统计.md":
+    if name.endswith(".md") and name!="README.md":
         file=open(path,'r',encoding='utf-8')
         finished=False
         num=0
@@ -31,6 +31,11 @@ def getAllFiles(path,f):
 
 
 path = os.getcwd()
-f=open('字数统计.md','w')
-f.write("# 字数统计\n\n")
+f=open('README.md','w')
+f.write('# MyStories\n\n')
+f.write('This project is used as an archive for all of my stories.\n\n')
+f.write('## Word Statistics\n\n')
+f.write('only tested on python3.7.4\n\n')
+f.write('`python stat.py`\n\n')
+f.write("## Result\n\n")
 getAllFiles(path,f)
