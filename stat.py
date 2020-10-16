@@ -5,11 +5,13 @@ unfin=[]
 
 def writeResults(f):
     f.write("### To Be Continued\n\n")
-    f.write("|名称|位置|字数|\n|:-|:-|:-|\n")
+    f.write("|名称|位置|字数|\n")
+    f.write("|:-|:-|:-|\n")
     for i in unfin:
         f.write(i+"\n")
     f.write("\n### Finished\n\n")
-    f.write("|名称|位置|字数|\n|:-|:-|:-|\n")
+    f.write("|名称|位置|字数|\n")
+    f.write("|:-|:-|:-|\n")
     for i in finish:
         f.write(i+"\n")
 
