@@ -5,11 +5,11 @@ unfin=[]
 
 def writeResults(f):
     f.write("### To Be Continued\n\n")
-    f.write(" | 名称 | 位置 | 字数 | \n | :- | :- | \n")
+    f.write("名称 | 位置 | 字数\n:- | :-\n")
     for i in unfin:
         f.write(i.replace("|"," | ")+"\n")
     f.write("\n### Finished\n\n")
-    f.write(" | 名称 | 位置 | 字数 | \n | :- | :- | \n")
+    f.write("名称 | 位置 | 字数\n:- | :-\n")
     for i in finish:
         f.write(i.replace("|"," | ")+"\n")
 
@@ -29,14 +29,14 @@ def stat(path,name):
             num+=len(i.strip())
             if(i.__contains__("END")):
                 finished=True
-        info="|"+name[0:-3]+"|"
+        info=name[0:-3]+"|"
         k=path.replace("\\"+name,"")
         k=k.replace(os.getcwd(),".")
         if len(k)==1:
             k+="\\"
         k=k.replace("\\","/")
         info+=k+"|"
-        info+=str(num)+"|"
+        info+=str(num)
         write(info,finished)
 
 def getAllFiles(path):
