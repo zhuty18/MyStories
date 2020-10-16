@@ -26,7 +26,7 @@ only tested on python3.7.4
 |角色扮演|./DC|3063|
 |请适度迷信蝙蝠|./DC|59|
 |这见了鬼的友情|./DC|167|
-|遇到你的那天|./DC|815|
+|遇到你那一天|./DC|815|
 |霍格沃茨都教了些什么|./DC|2416|
 |Tremor|./translation/batfamily|4345|
 |Beyond|./translation/BruceHal|5202|
