@@ -5,11 +5,11 @@ unfin=[]
 
 def writeResults(f):
     f.write("### To Be Continued\n\n")
-    f.write("|名称|字数|\n|:-|:-|\n")
+    f.write("|名称|位置|字数|\n|:-|:-|\n")
     for i in unfin:
         f.write(i+"\n")
     f.write("\n### Finished\n\n")
-    f.write("|名称|字数|\n|:-|:-|\n")
+    f.write("|名称|位置|字数|\n|:-|:-|\n")
     for i in finish:
         f.write(i+"\n")
 
@@ -29,7 +29,14 @@ def stat(path,name):
             num+=len(i.strip())
             if(i.__contains__("END")):
                 finished=True
-        info="|"+name[0:-3]+"|"+str(num)+"|"
+        info="|"+name[0:-3]+"|"
+        k=path.replace("\\"+name,"")
+        k=k.replace(os.getcwd(),".")
+        if len(k)==1:
+            k+="\\"
+        k=k.replace("\\","/")
+        info+=k+"|"
+        info+=str(num)+"|"
         write(info,finished)
 
 def getAllFiles(path):
@@ -40,7 +47,6 @@ def getAllFiles(path):
             getAllFiles(subdir)
         else:
             stat(subdir,i)
-
 
 path = os.getcwd()
 f=open('README.md','w',encoding="utf-8")
