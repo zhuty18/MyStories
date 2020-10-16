@@ -13,7 +13,7 @@ only tested on python3.7.4
 ### To Be Continued
 
 名称 | 位置 | 字数
-:- | :-
+:- | :- | :-
 Wayne庄园的电影之夜 | ./DC | 3277
 入戏太深 | ./DC | 143
 天堂岛的留学生 | ./DC | 428
@@ -35,7 +35,7 @@ Beyond | ./translation/BruceHal | 5202
 ### Finished
 
 名称 | 位置 | 字数
-:- | :-
+:- | :- | :-
 与Wayne同行 | ./DC | 5694
 伴郎争夺战 | ./DC | 48645
 假天使和真恶魔 | ./DC | 38599
