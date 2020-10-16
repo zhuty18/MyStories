@@ -1,10 +1,25 @@
 import os
 
-def write(info,f):
-    f.write(info)
-    print(info.strip())
+finish=[]
+unfin=[]
 
-def stat(path,name,f):
+def writeResults(f):
+    f.write("### To Be Continued\n\n")
+    f.write("|名称|字数|\n|:-|:-|\n")
+    for i in unfin:
+        f.write(i+"\n")
+    f.write("\n### Finished\n\n")
+    f.write("|名称|字数|\n|:-|:-|\n")
+    for i in finish:
+        f.write(i+"\n")
+
+def write(info,fin):
+    if fin:
+        finish.append(info)
+    else:
+        unfin.append(info)
+
+def stat(path,name):
     if name.endswith(".md") and name!="README.md":
         file=open(path,'r',encoding='utf-8')
         finished=False
@@ -14,28 +29,26 @@ def stat(path,name,f):
             num+=len(i.strip())
             if(i.__contains__("END")):
                 finished=True
-        info=name+"\t"+str(num)
-        if finished:
-            info+="\t"+"Finished"
-        info+='\n\n'
-        write(info,f)
+        info="|"+name[0:-3]+"|"+str(num)+"|"
+        write(info,finished)
 
-def getAllFiles(path,f):
+def getAllFiles(path):
     list=os.listdir(path)
     for i in list:
         subdir=os.path.join(path,i)
         if os.path.isdir(subdir):
-            getAllFiles(subdir,f)
+            getAllFiles(subdir)
         else:
-            stat(subdir,i,f)
+            stat(subdir,i)
 
 
 path = os.getcwd()
-f=open('README.md','w')
+f=open('README.md','w',encoding="utf-8")
 f.write('# MyStories\n\n')
 f.write('This project is used as an archive for all of my stories.\n\n')
 f.write('## Word Statistics\n\n')
 f.write('only tested on python3.7.4\n\n')
 f.write('`python stat.py`\n\n')
 f.write("## Result\n\n")
-getAllFiles(path,f)
+getAllFiles(path)
+writeResults(f)
