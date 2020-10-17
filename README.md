@@ -12,7 +12,7 @@ only tested on python3.7.4
 
 `python stat.py`
 
-## Result
+## Word Stat Result
 
 ### To Be Continued
 

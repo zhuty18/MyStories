@@ -29,7 +29,7 @@ def changeTime(path):
     return res
 
 def stat(path,name):
-    if name.endswith('.md') and name!='README.md':
+    if name.endswith('.md') and (not name.__contains__('README')):
         file=open(path,'r',encoding='utf-8')
         finished=False
         num=0
@@ -63,13 +63,10 @@ def getAllFiles(path):
 
 path = os.getcwd()
 f=open('README.md','w',encoding='utf-8')
-f.write('# MyStories\n\n')
-f.write('This project is used as an archive for all of my stories.\n\n')
-f.write('## Auto Commit\n\n')
-f.write('run the script on local OS\n\n')
-f.write('## Word Statistics\n\n')
-f.write('only tested on python3.7.4\n\n')
-f.write('`python stat.py`\n\n')
-f.write('## Result\n\n')
+f2=open('README-o.md','r',encoding='utf-8')
+for i in f2.readlines():
+    f.write(i)
+f2.close()
 getAllFiles(path)
 writeResults(f)
+f.close()
