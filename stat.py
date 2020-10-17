@@ -41,6 +41,7 @@ def stat(path,name):
             k=k[0:-1]
         info+=k+"|"
         info+=str(num)+"|"
+        print(name+"\t"+str(num)+"\t"+str(finished))
         write(info,finished)
 
 def getAllFiles(path):
