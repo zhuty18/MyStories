@@ -5,16 +5,16 @@ finish=[]
 unfin=[]
 
 def writeResults(f):
-    f.write("### To Be Continued\n\n")
-    str="|名称|位置|字数|修改时间|\n"
-    str+="|:-|:-|:-|:-|\n"
+    f.write('### To Be Continued\n\n')
+    str='|名称|位置|字数|修改时间|\n'
+    str+='|:-|:-|:-|:-|\n'
     f.write(str)
     for i in unfin:
-        f.write(i+"\n")
-    f.write("\n### Finished\n\n")
+        f.write(i+'\n')
+    f.write('\n### Finished\n\n')
     f.write(str)
     for i in finish:
-        f.write(i+"\n")
+        f.write(i+'\n')
 
 def write(info,fin):
     if fin:
@@ -25,31 +25,31 @@ def write(info,fin):
 def changeTime(path):
     t=os.path.getmtime(path)
     t=time.localtime(t)
-    res=str(t.tm_mon).zfill(2)+"."+str(t.tm_mday).zfill(2)+" "+str(t.tm_hour).zfill(2)+":"+str(t.tm_min).zfill(2)
+    res=str(t.tm_mon).zfill(2)+'.'+str(t.tm_mday).zfill(2)+' '+str(t.tm_hour).zfill(2)+':'+str(t.tm_min).zfill(2)
     return res
 
 def stat(path,name):
-    if name.endswith(".md") and name!="README.md":
+    if name.endswith('.md') and name!='README.md':
         file=open(path,'r',encoding='utf-8')
         finished=False
         num=0
-        info=""
+        info=''
         for i in file.readlines():
             num+=len(i.strip())
-            if(i.__contains__("END")):
+            if(i.__contains__('END')):
                 finished=True
-        info="|"+name[0:-3]+"|"
-        k=path.replace(name,"")
-        k=k.replace(os.getcwd(),".")
-        k=k.replace("\\","/")
+        info='|'+name[0:-3]+'|'
+        k=path.replace(name,'')
+        k=k.replace(os.getcwd(),'.')
+        k=k.replace('\\','/')
         if len(k)==1:
-            k+="/"
+            k+='/'
         elif len(k)>2:
             k=k[0:-1]
-        info+=k+"|"
-        info+=str(num)+"|"
-        info+=changeTime(path)+"|"
-        print(name+"\t"+str(num)+"\t"+str(finished))
+        info+=k+'|'
+        info+=str(num)+'|'
+        info+=changeTime(path)+'|'
+        print(name+'\t'+str(num)+'\t'+str(finished))
         write(info,finished)
 
 def getAllFiles(path):
@@ -62,12 +62,14 @@ def getAllFiles(path):
             stat(subdir,i)
 
 path = os.getcwd()
-f=open('README.md','w',encoding="utf-8")
+f=open('README.md','w',encoding='utf-8')
 f.write('# MyStories\n\n')
 f.write('This project is used as an archive for all of my stories.\n\n')
+f.write('## Auto Commit\n\n')
+f.write('run the script on local OS\n\n')
 f.write('## Word Statistics\n\n')
 f.write('only tested on python3.7.4\n\n')
 f.write('`python stat.py`\n\n')
-f.write("## Result\n\n")
+f.write('## Result\n\n')
 getAllFiles(path)
 writeResults(f)
