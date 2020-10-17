@@ -32,9 +32,9 @@ only tested on python3.7.4
 |这见了鬼的友情|./DC|167|09.15 18:11|
 |遇到你的那一天|./DC|824|10.17 09:38|
 |霍格沃茨都教了些什么|./DC|2416|10.02 19:32|
+|博尔赫斯摘抄.Part.2|./Others|1174|10.17 11:51|
 |Tremor|./translation/batfamily|4345|09.22 16:44|
 |Beyond|./translation/BruceHal|6719|10.17 11:20|
-|博尔赫斯摘抄.Part.2|./|1174|10.08 16:18|
 
 ### Finished
 
