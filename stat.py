@@ -1,17 +1,18 @@
 import os
+import time
 
 finish=[]
 unfin=[]
 
 def writeResults(f):
     f.write("### To Be Continued\n\n")
-    f.write("|名称|位置|字数|\n")
-    f.write("|:-|:-|:-|\n")
+    f.write("|名称|位置|字数|修改时间|\n")
+    f.write("|:-|:-|:-|:-|\n")
     for i in unfin:
         f.write(i+"\n")
     f.write("\n### Finished\n\n")
-    f.write("|名称|位置|字数|\n")
-    f.write("|:-|:-|:-|\n")
+    f.write("|名称|位置|字数|修改时间|\n")
+    f.write("|:-|:-|:-|:-|\n")
     for i in finish:
         f.write(i+"\n")
 
@@ -20,6 +21,12 @@ def write(info,fin):
         finish.append(info)
     else:
         unfin.append(info)
+
+def changeTime(path):
+    t=os.path.getmtime(path)
+    t=time.localtime(t)
+    res=str(t.tm_mon).zfill(2)+"."+str(t.tm_mday).zfill(2)+" "+str(t.tm_hour).zfill(2)+":"+str(t.tm_min).zfill(2)
+    return res
 
 def stat(path,name):
     if name.endswith(".md") and name!="README.md":
@@ -41,6 +48,7 @@ def stat(path,name):
             k=k[0:-1]
         info+=k+"|"
         info+=str(num)+"|"
+        info+=changeTime(path)+"|"
         print(name+"\t"+str(num)+"\t"+str(finished))
         write(info,finished)
 
