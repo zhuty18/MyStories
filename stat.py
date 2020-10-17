@@ -32,11 +32,13 @@ def stat(path,name):
             if(i.__contains__("END")):
                 finished=True
         info="|"+name[0:-3]+"|"
-        k=path.replace("\\"+name,"")
+        k=path.replace(name,"")
         k=k.replace(os.getcwd(),".")
-        if len(k)==1:
-            k+="\\"
         k=k.replace("\\","/")
+        if len(k)==1:
+            k+="/"
+        elif len(k)>2:
+            k=k[0:-1]
         info+=k+"|"
         info+=str(num)+"|"
         write(info,finished)
