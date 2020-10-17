@@ -6,13 +6,13 @@ unfin=[]
 
 def writeResults(f):
     f.write("### To Be Continued\n\n")
-    f.write("|名称|位置|字数|修改时间|\n")
-    f.write("|:-|:-|:-|:-|\n")
+    str="|名称|位置|字数|修改时间|\n"
+    str+="|:-|:-|:-|:-|\n"
+    f.write(str)
     for i in unfin:
         f.write(i+"\n")
     f.write("\n### Finished\n\n")
-    f.write("|名称|位置|字数|修改时间|\n")
-    f.write("|:-|:-|:-|:-|\n")
+    f.write(str)
     for i in finish:
         f.write(i+"\n")
 
