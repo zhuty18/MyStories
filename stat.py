@@ -3,6 +3,7 @@ import time
 
 finish=[]
 unfin=[]
+other=[]
 
 def writeResults(f):
     f.write('### To Be Continued\n\n')
@@ -15,12 +16,18 @@ def writeResults(f):
     f.write(str)
     for i in finish:
         f.write(i+'\n')
+    f.write('\n### Others\n\n')
+    f.write(str)
+    for i in other:
+        f.write(i+'\n')
 
-def write(info,fin):
-    if fin:
+def write(info,type):
+    if type=='fin':
         finish.append(info)
-    else:
+    elif type=='unfin':
         unfin.append(info)
+    else:
+        other.append(info)
 
 def changeTime(path):
     t=os.path.getmtime(path)
@@ -31,13 +38,17 @@ def changeTime(path):
 def stat(path,name):
     if name.endswith('.md') and (not name.__contains__('README')):
         file=open(path,'r',encoding='utf-8')
-        finished=False
+        type=''
         num=0
         info=''
         for i in file.readlines():
             num+=len(i.strip())
             if(i.__contains__('END')):
-                finished=True
+                type='fin'
+        if name.__contains__('摘抄'):
+            type='other'
+        if type=='':
+            type='unfin'
         info='|'+name[0:-3]+'|'
         k=path.replace(name,'')
         k=k.replace(os.getcwd(),'.')
@@ -49,8 +60,8 @@ def stat(path,name):
         info+=k+'|'
         info+=str(num)+'|'
         info+=changeTime(path)+'|'
-        print(name+'\t'+str(num)+'\t'+str(finished))
-        write(info,finished)
+        print(name+'\t'+str(num)+'\t'+type)
+        write(info,type)
 
 def getAllFiles(path):
     list=os.listdir(path)
