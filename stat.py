@@ -65,6 +65,7 @@ def stat(path,name):
 
 def getAllFiles(path):
     list=os.listdir(path)
+    list.sort()
     for i in list:
         subdir=os.path.join(path,i)
         if os.path.isdir(subdir):
