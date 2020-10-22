@@ -5,6 +5,23 @@ finish=[]
 unfin=[]
 other=[]
 
+def length(str):
+    res=0
+    t=False
+    for i in str:
+        if i.isascii():
+            t=True
+            if i==' ':
+                res+=1
+        else:
+            res+=1
+            if t:
+                res+=1
+                t=False
+    if t:
+        res+=1
+    return res
+
 def writeResults(f):
     f.write('### To Be Continued\n\n')
     str='|名称|位置|字数|修改时间|\n'
@@ -42,8 +59,8 @@ def stat(path,name):
         num=0
         info=''
         for i in file.readlines():
-            num+=len(i.strip())
-            if(i.__contains__('END')):
+            num+=length(i.strip())
+            if i.__contains__('END'):
                 type='fin'
         if name.__contains__('摘抄'):
             type='other'
@@ -73,12 +90,15 @@ def getAllFiles(path):
         else:
             stat(subdir,i)
 
-path = os.getcwd()
-f=open('README.md','w',encoding='utf-8')
-f2=open('README-o.md','r',encoding='utf-8')
-for i in f2.readlines():
-    f.write(i)
-f2.close()
-getAllFiles(path)
-writeResults(f)
-f.close()
+def main():
+    path = os.getcwd()
+    f=open('README.md','w',encoding='utf-8')
+    f2=open('README-o.md','r',encoding='utf-8')
+    for i in f2.readlines():
+        f.write(i)
+    f2.close()
+    getAllFiles(path)
+    writeResults(f)
+    f.close()
+
+main()
