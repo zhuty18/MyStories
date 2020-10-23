@@ -46,7 +46,7 @@ class Statics:
 
     def writeResults(self):
         if len(self.unfin)+len(self.finish)+len(self.other)>0:
-            f=open(self.path+'/Word Statics.md','w',encoding='utf-8')
+            f=open(self.path+'/README.md','w',encoding='utf-8')
             f.write('# Word Stat Result\n\n')
             str='|名称|字数|修改时间|\n'
             str+='|:-|:-|:-|\n'
@@ -81,7 +81,7 @@ class Statics:
         return res
 
     def stat(self,path,name):
-        if name.endswith('.md') and (not name.__contains__('README')) and (not name.__contains__('Word Statics')):
+        if name.endswith('.md') and (not name.__contains__('README')):
             file=open(path,'r',encoding='utf-8')
             type=''
             num=0
