@@ -1,29 +1,7 @@
-# MyStories
+# Word Stat Result
 
-This project is used as an archive for all of my stories.
+## To Be Continued
 
-## Auto Commit
-
-run the script on local OS
-
-## Word Statistics
-
-only tested on python3.7.4
-
-`python3 stat.py`
-
-## Word Cloud Picture
-
-atleast support on Ubuntu
-
-make picture
-`python3 wc.py`
-
-remove all wold cloud picture
-`find . name '*.png' -exec rm {} \;`
-
-## Format Change
-
-support doc, docx, txt
-
-`python3 doc.py`
+|名称|字数|修改时间|
+|:-|:-|:-|
+|脑洞集中处|1137|10.23 17:04|

@@ -168,3 +168,4 @@ Tony相信Loki知道在这段时间内他有三个Pepper严禁他不出席的会
 
 最后的最后，Tony和Bruce的恋情被Clark Kent刊登在了星球日报上——当然是Bruce授意的——，而Bruce当场表示：“因为我是正义联盟以及Batman的实际资助人，所以事实上，我也有Batman的服装，Tony很喜欢这身衣服。”
 
+END
