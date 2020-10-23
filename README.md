@@ -10,4 +10,20 @@ run the script on local OS
 
 only tested on python3.7.4
 
-`python stat.py`
+`python3 stat.py`
+
+## Word Cloud Picture
+
+atleast support on Ubuntu
+
+make picture
+`python3 wc.py`
+
+remove all wold cloud picture
+`find . name '*.png' -exec rm {} \;`
+
+## Format Change
+
+support doc, docx, txt
+
+`python3 doc.py`

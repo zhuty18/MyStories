@@ -10,3 +10,4 @@
 *.db
 *.log
 *.ttf
+__pycache__/
