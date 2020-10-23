@@ -2,12 +2,11 @@
 参考/
 *.docx
 *.doc
-*.xlsx
 *.txt
-*.xmind
 *.jpg
 *.png
 *.psd
 *.tmp
 *.db
 *.log
+QZ/
