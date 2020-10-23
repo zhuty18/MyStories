@@ -2,9 +2,12 @@ import os
 import jieba
 import jieba.analyse
 import wordcloud
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
 class WordPic:
     def __init__(self,path):
+        self.font=fm.FontProperties(fname='myfont.ttf',size=15)
         self.drawFiles(path)
     def drawFiles(self,path):
         list=os.listdir(path)
@@ -23,7 +26,12 @@ class WordPic:
             fre={keyword[0]:keyword[1] for keyword in keywords}
             wc=wordcloud.WordCloud(font_path="myfont.ttf",width=600,height=400)
             wc.fit_words(fre)
-            wc.to_file(path.replace('.md','.png'))
+            plt.imshow(wc)
+            plt.title(path.replace('.md',''),fontproperties=self.font)
+            plt.ion()
+            plt.pause(1)
+            plt.close()
+            #wc.to_file(path.replace('.md','.png'))
 
 path = os.getcwd()
 WordPic(path)
