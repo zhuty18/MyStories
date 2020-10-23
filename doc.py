@@ -3,7 +3,9 @@ import os
 from win32com import client as wc
 
 def stat(path,name):
-    if name.endswith('.docx'):
+    if name.startswith('~'):
+        os.remove(path)
+    elif name.endswith('.docx'):
         print(name)
         file=docx.Document(path)
         fout=open(path.replace('.docx','.md'),'w',encoding='utf-8')
@@ -40,4 +42,4 @@ def getAllFiles(path):
             stat(subdir,i)
 
 path=os.getcwd()
-getAllFiles(path+'\\'+"O\\")
+getAllFiles(path)
