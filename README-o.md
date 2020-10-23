@@ -13,4 +13,3 @@ only tested on python3.7.4
 `python stat.py`
 
 ## Word Stat Result
-

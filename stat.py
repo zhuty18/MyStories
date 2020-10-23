@@ -17,19 +17,14 @@ class KeyWord:
         return ' '.join(self.k1)+'\t'+' '.join(self.k2)
 
 class Statics:
-    def __init__(self):
+    def __init__(self,path):
         self.finish=[]
         self.unfin=[]
         self.other=[]
-        path = os.getcwd()
-        f=open('README.md','w',encoding='utf-8')
-        f2=open('README-o.md','r',encoding='utf-8')
-        for i in f2.readlines():
-            f.write(i)
-        f2.close()
         self.getAllFiles(path)
-        self.writeResults(f)
-        f.close()
+        self.dir=path.replace(os.getcwd(),'')
+        self.dir=self.dir.replace('\\','/')
+        self.dir=self.dir[1:]
 
     def length(self,str):
         res=0
@@ -49,20 +44,25 @@ class Statics:
         return res
 
     def writeResults(self,f):
-        f.write('### To Be Continued\n\n')
-        str='|名称|位置|字数|修改时间|\n'
-        str+='|:-|:-|:-|:-|\n'
-        f.write(str)
-        for i in self.unfin:
-            f.write(i+'\n')
-        f.write('\n### Finished\n\n')
-        f.write(str)
-        for i in self.finish:
-            f.write(i+'\n')
-        f.write('\n### Others\n\n')
-        f.write(str)
-        for i in self.other:
-            f.write(i+'\n')
+        if len(self.unfin)+len(self.finish)+len(self.other)>0:
+            f.write('\n### '+self.dir+'\n\n')
+            str='|名称|字数|修改时间|\n'
+            str+='|:-|:-|:-|\n'
+            if len(self.unfin)>0:
+                f.write('#### To Be Continued\n\n')
+                f.write(str)
+                for i in self.unfin:
+                    f.write(i+'\n')
+            if len(self.finish)>0:
+                f.write('\n#### Finished\n\n')
+                f.write(str)
+                for i in self.finish:
+                    f.write(i+'\n')
+            if len(self.other)>0:
+                f.write('\n#### Others\n\n')
+                f.write(str)
+                for i in self.other:
+                    f.write(i+'\n')
 
     def write(self,info,type):
         if type=='fin':
@@ -94,18 +94,10 @@ class Statics:
             if type=='':
                 type='unfin'
             info='|'+name[0:-3]+'|'
-            k=path.replace(name,'')
-            k=k.replace(os.getcwd(),'.')
-            k=k.replace('\\','/')
-            if len(k)==1:
-                k+='/'
-            elif len(k)>2:
-                k=k[0:-1]
-            info+=k+'|'
             info+=str(num)+'|'
             info+=self.changeTime(path)+'|'
             print(name+'\t'+str(num)+'\t'+type)
-            wc=KeyWord(path)
+            #KeyWord(path)
             self.write(info,type)
 
     def getAllFiles(self,path):
@@ -113,12 +105,23 @@ class Statics:
         list.sort()
         for i in list:
             subdir=os.path.join(path,i)
-            if os.path.isdir(subdir):
-                self.getAllFiles(subdir)
+            if os.path.isdir(subdir) and not subdir.__contains__('参考'):
+                dirs.append(Statics(subdir))  
             else:
                 self.stat(subdir,i)
 
+dirs=[]
+
 def main():
-    s=Statics()
+    path = os.getcwd()
+    dirs.append(Statics(path))       
+    f=open('README.md','w',encoding='utf-8')
+    f2=open('README-o.md','r',encoding='utf-8')
+    for i in f2.readlines():
+        f.write(i)
+    f2.close()
+    for i in dirs:
+        i.writeResults(f)
+    f.close()
 
 main()

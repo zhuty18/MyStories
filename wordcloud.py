@@ -6,9 +6,8 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
 class WordPic:
-    def __init__(self):
+    def __init__(self,path):
         self.font=FontProperties(fname=r"myfont.ttf", size=14)
-        path = os.getcwd()
         self.drawFiles(path)
     def drawFiles(self,path):
         list=os.listdir(path)
@@ -35,4 +34,5 @@ class WordPic:
             plt.pause(1)
             plt.close()
 
-wp=WordPic()
+path = os.getcwd()
+WordPic(path)
