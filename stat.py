@@ -22,6 +22,7 @@ class Statics:
         self.unfin=[]
         self.other=[]
         self.getAllFiles(path)
+        self.path=path
         self.dir=path.replace(os.getcwd(),'')
         self.dir=self.dir.replace('\\','/')
         self.dir=self.dir[1:]
@@ -43,23 +44,24 @@ class Statics:
             res+=1
         return res
 
-    def writeResults(self,f):
+    def writeResults(self):
         if len(self.unfin)+len(self.finish)+len(self.other)>0:
-            f.write('\n### '+self.dir+'\n\n')
+            f=open(self.path+'/Word Statics.md','w',encoding='utf-8')
+            f.write('# Word Stat Result\n\n')
             str='|名称|字数|修改时间|\n'
             str+='|:-|:-|:-|\n'
             if len(self.unfin)>0:
-                f.write('#### To Be Continued\n\n')
+                f.write('## To Be Continued\n\n')
                 f.write(str)
                 for i in self.unfin:
                     f.write(i+'\n')
             if len(self.finish)>0:
-                f.write('\n#### Finished\n\n')
+                f.write('\n## Finished\n\n')
                 f.write(str)
                 for i in self.finish:
                     f.write(i+'\n')
             if len(self.other)>0:
-                f.write('\n#### Others\n\n')
+                f.write('\n## Others\n\n')
                 f.write(str)
                 for i in self.other:
                     f.write(i+'\n')
@@ -79,7 +81,7 @@ class Statics:
         return res
 
     def stat(self,path,name):
-        if name.endswith('.md') and (not name.__contains__('README')):
+        if name.endswith('.md') and (not name.__contains__('README')) and (not name.__contains__('Word Statics')):
             file=open(path,'r',encoding='utf-8')
             type=''
             num=0
@@ -114,14 +116,8 @@ dirs=[]
 
 def main():
     path = os.getcwd()
-    dirs.append(Statics(path))       
-    f=open('README.md','w',encoding='utf-8')
-    f2=open('README-o.md','r',encoding='utf-8')
-    for i in f2.readlines():
-        f.write(i)
-    f2.close()
+    dirs.append(Statics(path))
     for i in dirs:
-        i.writeResults(f)
-    f.close()
+        i.writeResults()
 
 main()
