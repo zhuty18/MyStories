@@ -1,7 +1,6 @@
 import docx
 import os
 from win32com import client as wc
-from workpath import myPath
 
 def stat(path,name):
     if name.startswith('~'):
@@ -41,5 +40,3 @@ def getAllFiles(path):
             getAllFiles(subdir)
         else:
             stat(subdir,i)
-
-getAllFiles(myPath)

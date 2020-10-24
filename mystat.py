@@ -1,8 +1,13 @@
 import os
 import time
-import jieba
-import jieba.analyse
-from workpath import myPath
+
+class WordStat:
+    dirs=[]
+    def __init__(self,path):
+        WordStat.dirs.append(Statics(path))
+        for i in self.dirs:
+            i.writeResults()
+
 
 class Statics:
     def __init__(self,path):
@@ -36,8 +41,8 @@ class Statics:
         if len(self.unfin)+len(self.finish)+len(self.other)>0:
             f=open(self.path+'/README.md','w',encoding='utf-8')
             f.write('# Word Stat Result\n\n')
-            str='|名称|字数|修改时间|\n'
-            str+='|:-|:-|:-|\n'
+            str='|名称|字数|\n'
+            str+='|:-|:-|\n'
             if len(self.unfin)>0:
                 f.write('## To Be Continued\n\n')
                 f.write(str)
@@ -86,7 +91,6 @@ class Statics:
                 type='unfin'
             info='|'+name[0:-3]+'|'
             info+=str(num)+'|'
-            info+=self.changeTime(path)+'|'
             print(name+'\t'+str(num)+'\t'+type)
             self.write(info,type)
 
@@ -96,15 +100,6 @@ class Statics:
         for i in list:
             subdir=os.path.join(path,i)
             if os.path.isdir(subdir) and not subdir.__contains__('参考'):
-                dirs.append(Statics(subdir))  
+                WordStat.dirs.append(Statics(subdir))  
             else:
                 self.stat(subdir,i)
-
-dirs=[]
-
-def main(path):
-    dirs.append(Statics(path))
-    for i in dirs:
-        i.writeResults()
-
-main(myPath)

@@ -8,22 +8,24 @@ run the script on local OS
 
 ## Scripts
 
-set work path in workpath.py
+prepare commit
+
+`python prepare.py`
 
 ### Word Statistics
 
-only tested on python3.7.4
-
-`python3 stat.py`
+mystat.py
 
 ### Word Cloud Picture
 
-at least support on Ubuntu
+wc.py
 
-make picture`python wc.py`
+s for save, p for perform, r for remove
 
-remove all word cloud picture`find . name '*.png' -exec rm {} \;`
+mutiple key supported
 
 ### Format Change Into MarkDown
 
-support doc, docx, txt`python doc.py`
+doc.py
+
+support doc, docx, txt
