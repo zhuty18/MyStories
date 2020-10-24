@@ -1,3 +1,4 @@
+python wc.py
 python stat.py
 git add .
 set h=%time:~0,5%

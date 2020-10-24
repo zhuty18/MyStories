@@ -23,6 +23,7 @@ class WordPic:
             f=open(path,'r',encoding='utf-8')
             str=f.read()
             keywords=jieba.analyse.extract_tags(str,withWeight=True,topK=50)
+            print(keywords)
             fre={keyword[0]:keyword[1] for keyword in keywords}
             wc=wordcloud.WordCloud(font_path="myfont.ttf",width=600,height=400)
             wc.fit_words(fre)
