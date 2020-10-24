@@ -4,6 +4,7 @@ import jieba.analyse
 import wordcloud
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+from workpath import myPath
 
 class WordPic:
     def __init__(self,path):
@@ -38,5 +39,4 @@ class WordPic:
 #            wc.to_file(path.replace('.md','.png'))
             os.remove(path.replace('.md','.png'))
 
-path = os.getcwd()
-WordPic(path)
+WordPic(myPath)

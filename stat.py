@@ -2,6 +2,7 @@ import os
 import time
 import jieba
 import jieba.analyse
+from workpath import myPath
 
 class Statics:
     def __init__(self,path):
@@ -101,10 +102,9 @@ class Statics:
 
 dirs=[]
 
-def main():
-    path = os.getcwd()
+def main(path):
     dirs.append(Statics(path))
     for i in dirs:
         i.writeResults()
 
-main()
+main(myPath)
