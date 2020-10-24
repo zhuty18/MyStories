@@ -3,19 +3,6 @@ import time
 import jieba
 import jieba.analyse
 
-class KeyWord:
-    def __init__(self,path):
-        f=open(path,'r',encoding='utf-8')
-        str=f.read()
-        self.k1=jieba.analyse.extract_tags(str,topK=10)
-        print(self.k1)
-        self.k2=jieba.analyse.textrank(str,topK=10)
-        print(self.k2)
-        print()
-        f.close()
-    def keywords(self):
-        return ' '.join(self.k1)+'\t'+' '.join(self.k2)
-
 class Statics:
     def __init__(self,path):
         self.finish=[]
@@ -65,6 +52,7 @@ class Statics:
                 f.write(str)
                 for i in self.other:
                     f.write(i+'\n')
+            f.close()
 
     def write(self,info,type):
         if type=='fin':
@@ -99,7 +87,6 @@ class Statics:
             info+=str(num)+'|'
             info+=self.changeTime(path)+'|'
             print(name+'\t'+str(num)+'\t'+type)
-            #KeyWord(path)
             self.write(info,type)
 
     def getAllFiles(self,path):
