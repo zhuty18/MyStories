@@ -36,6 +36,7 @@ class WordPic:
 #            plt.pause(1)
 #            plt.close()
             wc.to_file(path.replace('.md','.png'))
+            os.remove(path.replace('.md','.png'))
 
 path = os.getcwd()
 WordPic(path)
