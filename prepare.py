@@ -5,7 +5,7 @@ import wc
 
 myPath=os.getcwd()
 
-mystat.WordStat(myPath)+'/DC'
+mystat.WordStat(myPath+'/DC')
 
 # wc.WordPic(myPath,'p')
 
