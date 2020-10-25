@@ -9,7 +9,7 @@ class WordPic:
     def __init__(self,path,job):
         self.font=fm.FontProperties(fname='myfont.ttf',size=15)
         self.job=job
-        jieba.load_userdict('mydict.dic')
+        jieba.load_userdict('mydict')
         self.drawFiles(path)
     def drawFiles(self,path):
         list=os.listdir(path)
