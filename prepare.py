@@ -7,6 +7,6 @@ myPath=os.getcwd()
 
 mystat.WordStat(myPath+'/DC')
 
-# wc.WordPic(myPath,'p')
+wc.WordPic(myPath,'s')
 
 # doc.getAllFiles(myPath)
