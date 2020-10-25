@@ -1,0 +1,14 @@
+~*
+参考/
+扫文/
+*.docx
+*.doc
+*.txt
+*.jpg
+*.png
+*.psd
+*.tmp
+*.db
+*.log
+*.ttf
+__pycache__/
