@@ -6,9 +6,10 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
 class WordPic:
-    def __init__(self,path,job):
+    def __init__(self,path,job='s',file=['']):
         self.font=fm.FontProperties(fname='myfont.ttf',size=15)
         self.job=job
+        self.keys=file
         jieba.load_userdict('mydict')
         self.drawFiles(path)
     def drawFiles(self,path):
@@ -20,8 +21,16 @@ class WordPic:
                 self.drawFiles(subdir)
             else:
                 self.drawPic(subdir,i)
+    def matchKeys(self,name):
+        res=False
+        for i in self.keys:
+            if name.__contains__(i):
+                res=True
+                break
+        return res
+
     def drawPic(self,path,name):
-        if name.endswith('.md') and (not name.__contains__('README')):
+        if name.endswith('.md') and (not name.__contains__('README')) and self.matchKeys(name):
             if self.job=='r':
                 os.remove(path.replace('.md','.png'))
             else:
@@ -38,9 +47,10 @@ class WordPic:
                     wc.to_file(path.replace('.md','.png'))
                 if self.job.__contains__('p'):
                     plt.imshow(wc)
-                    plt.title(path.replace('.md',''),fontproperties=self.font)
-                    plt.ion()
-                    plt.pause(1)
-                    plt.close()
+                    plt.title(name.replace('.md',''),fontproperties=self.font)
+                    #plt.ion()
+                    #plt.pause(1)
+                    #plt.close()
+                    plt.show()
                 if self.job.__contains__('r'):
                     os.remove(path.replace('.md','.png'))
