@@ -4,10 +4,10 @@
 
 |名称|字数|
 |:-|:-|
-|Tremor|3964|
+|[Tremor](Tremor.md)|3964|
 
 ## Finished
 
 |名称|字数|
 |:-|:-|
-|Soliloquy|9065|
+|[Soliloquy](Soliloquy.md)|9065|

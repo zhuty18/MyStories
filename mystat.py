@@ -89,7 +89,7 @@ class Statics:
                 type='other'
             if type=='':
                 type='unfin'
-            info='|'+name[0:-3]+'|'
+            info='|['+name[0:-3]+']('+name+')|'
             info+=str(num)+'|'
             print(name+'\t'+str(num)+'\t'+type)
             self.write(info,type)
