@@ -3,9 +3,9 @@ import mystat
 import doc
 import wc
 
-myPath=os.getcwd()
+myPath=os.getcwd()+'/DC'
 
-mystat.WordStat(myPath+'/DC')
+mystat.WordStat(myPath)
 
 wc.WordPic(path=myPath,job='p',file=['发现'])
 
