@@ -1,4 +1,4 @@
-# MyStories
+# My Stories
 
 This project is used as an archive for all of my stories.
 
@@ -20,11 +20,11 @@ mystat.py
 
 wc.py
 
-s for save, p for perform, r for remove
+s for save, p for perform, r for remove. Multiple using supported.
 
-mutiple key supported
+list of key words in file name parameter supported.
 
-### Format Change Into MarkDown
+### Format Change Into Mark Down
 
 doc.py
 
