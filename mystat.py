@@ -15,11 +15,38 @@ class Statics:
         self.finish=[]
         self.unfin=[]
         self.other=[]
-        self.getAllFiles(path)
         self.path=path
         self.dir=path.replace(os.getcwd(),'')
         self.dir=self.dir.replace('\\','/')
         self.dir=self.dir[1:]
+        self.readHistory()
+        self.getAllFiles(path)
+
+    def readHistory(self):
+        f=open(self.path+'/README.md','r',encoding='utf-8')
+        l=f.readlines()
+        f.close()
+        self.former={}
+        for i in l:
+            if i.__contains__('.md'):
+                t=self.getStat(i)
+                self.former[t[0]]=t[1]
+
+    def getStat(self,str):
+        t=str.split('|')
+        res=['',0]
+        res[0]=t[1].split('[')[1]
+        res[0]=res[0].split(']')[0]
+        res[1]=int(t[2])
+        return res
+
+    def compareStat(self,k):
+        t=self.getStat(k)
+        before=0
+        if t[0] in self.former.keys():
+            before=self.former[t[0]]
+        if before != t[1]:
+            print(t[0]+'\t'+str(before)+'->'+str(t[1]))
 
     def length(self,str):
         res=0
@@ -49,16 +76,19 @@ class Statics:
                 f.write(str)
                 for i in self.unfin:
                     f.write(i+'\n')
+                    self.compareStat(i)
             if len(self.finish)>0:
                 f.write('\n## Finished\n\n')
                 f.write(str)
                 for i in self.finish:
                     f.write(i+'\n')
+                    self.compareStat(i)
             if len(self.other)>0:
                 f.write('\n## Others\n\n')
                 f.write(str)
                 for i in self.other:
                     f.write(i+'\n')
+                    self.compareStat(i)
             f.close()
 
     def write(self,info,type):
@@ -92,7 +122,6 @@ class Statics:
                 type='unfin'
             info='|['+name[0:-3]+']('+name+')|'
             info+=str(num)+'|'
-            print(name+'\t'+str(num)+'\t'+type)
             self.write(info,type)
 
     def getAllFiles(self,path):
