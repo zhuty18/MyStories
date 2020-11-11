@@ -1,6 +1,7 @@
 import os
 import time
 from pypinyin import lazy_pinyin
+import wc
 
 class WordStat:
     dirs=[]
@@ -47,6 +48,7 @@ class Statics:
             before=self.former[t[0]]
         if before != t[1]:
             print(t[0]+'\t'+str(before)+'->'+str(t[1]))
+            wc.files.append(t[0])
 
     def length(self,str):
         res=0
@@ -76,22 +78,20 @@ class Statics:
                 f.write(str)
                 for i in self.unfin:
                     f.write(i+'\n')
-                    self.compareStat(i)
             if len(self.finish)>0:
                 f.write('\n## Finished\n\n')
                 f.write(str)
                 for i in self.finish:
                     f.write(i+'\n')
-                    self.compareStat(i)
             if len(self.other)>0:
                 f.write('\n## Others\n\n')
                 f.write(str)
                 for i in self.other:
                     f.write(i+'\n')
-                    self.compareStat(i)
             f.close()
 
     def write(self,info,type):
+        self.compareStat(info)
         if type=='fin':
             self.finish.append(info)
         elif type=='unfin':

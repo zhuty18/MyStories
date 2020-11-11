@@ -5,8 +5,10 @@ import wordcloud
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
+files=[]
+
 class WordPic:
-    def __init__(self,path,job='s',file=['']):
+    def __init__(self,path,job='s',file=files):
         self.font=fm.FontProperties(fname='myfont.ttf',size=15)
         self.job=job
         self.keys=file
