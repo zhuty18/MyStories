@@ -29,3 +29,7 @@ list of key words in file name parameter supported.
 doc.py
 
 support doc, docx, txt
+
+### Search All Files For Key Word
+
+search.py
