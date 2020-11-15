@@ -2,6 +2,12 @@
 
 This project is used as an archive for all of my stories.
 
+# Scripts
+
+`python3 -m pip install --user -r requirements.txt`
+
+install requirements
+
 ## Auto Commit
 
 insert in prepare.py

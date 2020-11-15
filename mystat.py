@@ -1,6 +1,6 @@
 import os
 import time
-from pypinyin import lazy_pinyin
+from xpinyin import Pinyin
 import wc
 
 class WordStat:
@@ -126,7 +126,13 @@ class Statics:
 
     def getAllFiles(self,path):
         list=os.listdir(path)
-        list.sort(key=lambda char: lazy_pinyin(char)[0][0])
+        result=[]
+        pin=Pinyin()
+        for item in list:
+            result.append((pin.get_pinyin(item),item))
+        result.sort()
+        for i in range(len(result)):
+            list[i]=result[i][1]
         for i in list:
             subdir=os.path.join(path,i)
             if os.path.isdir(subdir) and not subdir.__contains__('参考'):

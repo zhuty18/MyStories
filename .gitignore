@@ -3,7 +3,7 @@
 扫文/
 *.docx
 *.doc
-*.txt
+*/*.txt
 *.jpg
 *.png
 *.psd

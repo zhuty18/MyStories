@@ -1,0 +1,4 @@
+xpinyin
+jieba
+wordcloud
+matplotlib

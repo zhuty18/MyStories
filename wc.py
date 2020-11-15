@@ -9,11 +9,12 @@ files=[]
 
 class WordPic:
     def __init__(self,path,job='s',file=files):
-        self.font=fm.FontProperties(fname='myfont.ttf',size=15)
-        self.job=job
-        self.keys=file
-        jieba.load_userdict('mydict')
-        self.drawFiles(path)
+        if len(file)!=0:
+            self.font=fm.FontProperties(fname='myfont.ttf',size=15)
+            self.job=job
+            self.keys=file
+            jieba.load_userdict('mydict')
+            self.drawFiles(path)
     def drawFiles(self,path):
         list=os.listdir(path)
         list.sort()
