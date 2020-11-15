@@ -21,7 +21,7 @@ def terminal():
     if args.ncommit:
         autoCommit(args.message)
 
-myPath=os.getcwd()
+myPath=os.getcwd()+'/DC'
 mystat.WordStat(myPath)
 wc.WordPic(path=myPath,job='p')
 terminal()
