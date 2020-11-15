@@ -4,7 +4,11 @@ This project is used as an archive for all of my stories.
 
 ## Auto Commit
 
-run the script on local OS
+insert in prepare.py
+
+use argument `-n` to disable commit function
+
+use argument `-m [yourmessage]` to change commit message
 
 ## Scripts
 
