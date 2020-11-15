@@ -27,5 +27,4 @@ wc.WordPic(path=myPath,job='p')
 terminal()
 
 # import doc
-
 # doc.getAllFiles(myPath)
