@@ -24,14 +24,15 @@ class Statics:
         self.getAllFiles(path)
 
     def readHistory(self):
-        f=open(self.path+'/README.md','r',encoding='utf-8')
-        l=f.readlines()
-        f.close()
-        self.former={}
-        for i in l:
-            if i.__contains__('.md'):
-                t=self.getStat(i)
-                self.former[t[0]]=t[1]
+        if os.path.exists(self.path+'/README.md'):
+            f=open(self.path+'/README.md','r',encoding='utf-8')
+            l=f.readlines()
+            f.close()
+            self.former={}
+            for i in l:
+                if i.__contains__('.md'):
+                    t=self.getStat(i)
+                    self.former[t[0]]=t[1]
 
     def getStat(self,str):
         t=str.split('|')
