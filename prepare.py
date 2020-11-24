@@ -9,7 +9,6 @@ def autoCommit(message):
     mes = time.strftime("%m.%d %H:%M", time.localtime())+' '
     mes += message
     mes = 'git commit -m \"'+mes+'\"'
-    print(mes)
     os.system('git add .')
     os.system(mes)
     os.system('git push')
