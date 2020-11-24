@@ -14,7 +14,7 @@ insert in prepare.py
 
 use argument `-n` to disable commit function
 
-use argument `-m [yourmessage]` to change commit message
+use argument `-m [your message]` to change commit message
 
 ## Scripts
 
