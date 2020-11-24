@@ -9,12 +9,12 @@ def stat(path, name):
     elif name.endswith('.docx'):
         print(name)
         file = docx.Document(path)
-        fout = open(path.replace('.docx', '.md'), 'w', encoding='utf-8')
-        fout.write("# ")
+        outfile = open(path.replace('.docx', '.md'), 'w', encoding='utf-8')
+        outfile.write("# ")
         for p in file.paragraphs:
-            fout.write(p.text+'\n\n')
+            outfile.write(p.text+'\n\n')
         os.remove(path)
-        fout.close()
+        outfile.close()
     elif name.endswith('.doc'):
         word = wc.Dispatch('Word.Application')
         doc = word.Documents.Open(path)        # 目标路径下的文件

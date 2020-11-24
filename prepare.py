@@ -16,10 +16,10 @@ def autoCommit(message):
 
 def terminal():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', '--ncommit', type=bool, default=True, nargs='?')
+    parser.add_argument('-n', '--notcommit', type=bool, default=True, nargs='?')
     parser.add_argument('-m', '--message', default='update')
     args = parser.parse_args()
-    if args.ncommit:
+    if args.notcommit:
         autoCommit(args.message)
 
 

@@ -16,7 +16,7 @@ class WordStat:
 class Statics:
     def __init__(self, path):
         self.finish = []
-        self.unfin = []
+        self.unfinished = []
         self.other = []
         self.path = path
         self.dir = path.replace(os.getcwd(), '')
@@ -71,15 +71,15 @@ class Statics:
         return res
 
     def writeResults(self):
-        if len(self.unfin)+len(self.finish)+len(self.other) > 0:
+        if len(self.unfinished)+len(self.finish)+len(self.other) > 0:
             f = open(self.path+'/README.md', 'w', encoding='utf-8')
             f.write('# Word Stat Result\n\n')
             str = '|名称|字数|\n'
             str += '|:-|:-|\n'
-            if len(self.unfin) > 0:
+            if len(self.unfinished) > 0:
                 f.write('## To Be Continued\n\n')
                 f.write(str)
-                for i in self.unfin:
+                for i in self.unfinished:
                     f.write(i+'\n')
             if len(self.finish) > 0:
                 f.write('\n## Finished\n\n')
@@ -97,8 +97,8 @@ class Statics:
         self.compareStat(info)
         if type == 'fin':
             self.finish.append(info)
-        elif type == 'unfin':
-            self.unfin.append(info)
+        elif type == 'unfinished':
+            self.unfinished.append(info)
         else:
             self.other.append(info)
 
@@ -123,7 +123,7 @@ class Statics:
             if name.__contains__('摘抄'):
                 type = 'other'
             if type == '':
-                type = 'unfin'
+                type = 'unfinished'
             info = '|['+name[0:-3]+']('+name+')|'
             info += str(num)+'|'
             self.write(info, type)
