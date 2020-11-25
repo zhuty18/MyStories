@@ -30,7 +30,7 @@ def terminal():
 
 
 args = terminal()
-print(args)
+# print(args)
 myPath = os.getcwd() + '/' + args.workpath
 if args.doc:
     import doc
