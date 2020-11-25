@@ -1,8 +1,6 @@
 import os
 import time
 import argparse
-import mystat
-import wc
 
 
 def autoCommit(message):
@@ -16,17 +14,32 @@ def autoCommit(message):
 
 def terminal():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', '--notcommit', type=bool, default=True, nargs='?')
+    parser.add_argument('-c', '--autocommit', type=bool,
+                        default=True, nargs='?', const=False)
     parser.add_argument('-m', '--message', default='update')
+    parser.add_argument('-p', '--workpath', type=str,
+                        default='DC', nargs='?', const='')
+    parser.add_argument('-s', '--statics', type=bool,
+                        default=True, nargs='?', const=False)
+    parser.add_argument('-w', '--wordcloud', type=bool,
+                        default=True, nargs='?', const=False)
+    parser.add_argument('-d', '--doc', type=bool,
+                        default=False, nargs='?', const=True)
     args = parser.parse_args()
-    if args.notcommit:
-        autoCommit(args.message)
+    return args
 
 
-myPath = os.getcwd()+'/DC'
-mystat.WordStat(myPath)
-wc.WordPic(path=myPath, job='p')
-terminal()
-
-# import doc
-# doc.getAllFiles(myPath)
+args = terminal()
+print(args)
+myPath = os.getcwd() + '/' + args.workpath
+if args.doc:
+    import doc
+    doc.getAllFiles(myPath)
+if args.statics:
+    import mystat
+    import wc
+    mystat.WordStat(myPath)
+    if args.wordcloud:
+        wc.WordPic(path=myPath, job='p')
+if args.autocommit:
+    autoCommit(args.message)
