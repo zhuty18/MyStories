@@ -34,6 +34,10 @@ use argument `-d` to format files
 
 mystat.py
 
+default sorting is by file name
+
+use argument `-o` to sort by last changed time
+
 ### Word Cloud Picture
 
 wc.py

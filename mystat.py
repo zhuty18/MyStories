@@ -7,18 +7,19 @@ import wc
 class WordStat:
     dirs = []
 
-    def __init__(self, path):
-        WordStat.dirs.append(Statics(path))
+    def __init__(self, path, order):
+        WordStat.dirs.append(Statics(path, order))
         for i in self.dirs:
             i.writeResults()
 
 
 class Statics:
-    def __init__(self, path):
+    def __init__(self, path, order):
         self.finish = []
         self.unfinished = []
         self.other = []
         self.path = path
+        self.sort = order
         self.dir = path.replace(os.getcwd(), '')
         self.dir = self.dir.replace('\\', '/')
         self.dir = self.dir[1:]
@@ -132,15 +133,23 @@ class Statics:
     def getAllFiles(self, path):
         list = os.listdir(path)
         result = []
-        pin = Pinyin()
-        for item in list:
-            result.append((pin.get_pinyin(item), item))
-        result.sort()
+        if self.sort == 'name':
+            pin = Pinyin()
+            for item in list:
+                result.append((pin.get_pinyin(item), item))
+            result.sort()
+        elif self.sort == 'time':
+            for item in list:
+                subdir=os.path.join(path, item)
+                time=os.path.getmtime(subdir)
+                result.append((time,item))
+            result.sort()
+            result.reverse()
         for i in range(len(result)):
             list[i] = result[i][1]
         for i in list:
             subdir = os.path.join(path, i)
             if os.path.isdir(subdir) and not subdir.__contains__('参考'):
-                WordStat.dirs.append(Statics(subdir))
+                WordStat.dirs.append(Statics(subdir, self.sort))
             else:
                 self.stat(subdir, i)

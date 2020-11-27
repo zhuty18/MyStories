@@ -25,6 +25,8 @@ def terminal():
                         default='')
     parser.add_argument('-d', '--doc', type=bool,
                         default=False, nargs='?', const=True)
+    parser.add_argument('-o', '--sortorder', type=str,
+                        default='name', nargs='?', const='time')
     args = parser.parse_args()
     return args
 
@@ -38,7 +40,7 @@ if args.doc:
 if args.statics:
     import mystat
     import wc
-    mystat.WordStat(myPath)
+    mystat.WordStat(myPath,args.sortorder)
     if args.wordcloud == '':
         wc.WordPic(path=myPath, job='p')
     else:
