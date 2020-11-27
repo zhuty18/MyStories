@@ -21,8 +21,8 @@ def terminal():
                         default='DC', nargs='?', const='')
     parser.add_argument('-s', '--statics', type=bool,
                         default=True, nargs='?', const=False)
-    parser.add_argument('-w', '--wordcloud', type=bool,
-                        default=True, nargs='?', const=False)
+    parser.add_argument('-w', '--wordcloud', type=str,
+                        default='')
     parser.add_argument('-d', '--doc', type=bool,
                         default=False, nargs='?', const=True)
     args = parser.parse_args()
@@ -37,9 +37,11 @@ if args.doc:
     doc.getAllFiles(myPath)
 if args.statics:
     import mystat
+    import wc
     mystat.WordStat(myPath)
-    if args.wordcloud:
-        import wc
+    if args.wordcloud == '':
         wc.WordPic(path=myPath, job='p')
+    else:
+        wc.WordPic(path=myPath, job='p', file=[args.wordcloud])
 if args.autocommit:
     autoCommit(args.message)

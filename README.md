@@ -12,15 +12,23 @@ install requirements
 
 insert in prepare.py
 
-use argument `-n` to disable commit function
+use argument `-c` to disable commit function
 
 use argument `-m [your message]` to change commit message
 
 ## Scripts
 
-prepare commit
+prepare for commit
 
 `python prepare.py`
+
+use argument `-p` to set the work path
+
+use argument `-s` to disable auto word statics and word cloud
+
+use argument `-w` to assign the file to draw word cloud
+
+use argument `-d` to format files
 
 ### Word Statistics
 
@@ -34,7 +42,7 @@ s for save, p for perform, r for remove. Multiple using supported.
 
 list of key words in file name parameter supported.
 
-### Format Change Into Mark Down
+### Format Change Into MarkDown
 
 doc.py
 
@@ -43,3 +51,5 @@ support doc, docx, txt
 ### Search All Files For Key Word
 
 search.py
+
+`python3 search.py [keyword]`
