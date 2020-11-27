@@ -1,11 +1,12 @@
 import os
+import sys
 
 
 class Searcher:
     def __init__(self, path, keyword):
         self.key = keyword
-        self.searchDir(path)
         self.pth = path
+        self.searchDir(path)
 
     def searchDir(self, path):
         list = os.listdir(path)
@@ -29,4 +30,5 @@ class Searcher:
                 print()
 
 
-Searcher(os.getcwd()+'/DC', '回头')
+key = sys.argv[1]
+Searcher(os.getcwd()+'/DC', key)
