@@ -140,9 +140,9 @@ class Statics:
             result.sort()
         elif self.sort == 'time':
             for item in list:
-                subdir=os.path.join(path, item)
-                time=os.path.getmtime(subdir)
-                result.append((time,item))
+                subdir = os.path.join(path, item)
+                time = os.path.getmtime(subdir)
+                result.append((time, item))
             result.sort()
             result.reverse()
         for i in range(len(result)):

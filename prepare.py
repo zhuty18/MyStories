@@ -40,7 +40,7 @@ if args.doc:
 if args.statics:
     import mystat
     import wc
-    mystat.WordStat(myPath,args.sortorder)
+    mystat.WordStat(myPath, args.sortorder)
     if args.wordcloud == '':
         wc.WordPic(path=myPath, job='p')
     else:
