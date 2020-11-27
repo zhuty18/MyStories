@@ -37,9 +37,9 @@ if args.doc:
     doc.getAllFiles(myPath)
 if args.statics:
     import mystat
-    import wc
     mystat.WordStat(myPath)
     if args.wordcloud:
+        import wc
         wc.WordPic(path=myPath, job='p')
 if args.autocommit:
     autoCommit(args.message)
