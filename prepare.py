@@ -9,7 +9,7 @@ def autoCommit(message):
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
-    os.system('git push')
+    # os.system('git push')
 
 
 def terminal():
