@@ -9,7 +9,6 @@ def autoCommit(message):
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
-    os.system('git push')
 
 
 def terminal():
@@ -17,7 +16,7 @@ def terminal():
     parser.add_argument('-c', '--autocommit', type=bool,
                         default=True, nargs='?', const=False)
     parser.add_argument('-m', '--message', default='update')
-    parser.add_argument('-p', '--workpath', type=str,
+    parser.add_argument('-path', '--workpath', type=str,
                         default='DC', nargs='?', const='')
     parser.add_argument('-s', '--statics', type=bool,
                         default=True, nargs='?', const=False)
@@ -27,6 +26,8 @@ def terminal():
                         default=False, nargs='?', const=True)
     parser.add_argument('-o', '--sortorder', type=str,
                         default='name', nargs='?', const='time')
+    parser.add_argument('-p', '--push', type=bool,
+                        default=True, nargs='?', const=False)
     args = parser.parse_args()
     return args
 
@@ -47,3 +48,5 @@ if args.statics:
         wc.WordPic(path=myPath, job='p', file=[args.wordcloud])
 if args.autocommit:
     autoCommit(args.message)
+    if args.push:
+        os.system('git push')
