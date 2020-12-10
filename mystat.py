@@ -5,14 +5,13 @@ import wc
 
 class WordStat:
     dirs = []
-    log = ['online statistic result']
+    log = ['# online statistic result']
 
     def __init__(self, path, order, online=False):
         WordStat.dirs.append(Statistic(path, order))
         if online:
-            print(os.getcwd()+'/statistic.log')
-            f = open(os.getcwd()+'/statistic.log', 'w', encoding='utf-8')
-            f.writelines(self.log)
+            f = open(os.getcwd()+'/README.md', 'a', encoding='utf-8')
+            f.write('\n\n'.join(self.log))
             f.close()
         else:
             for i in self.dirs:
