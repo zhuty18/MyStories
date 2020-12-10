@@ -28,7 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Copy Readme
-        run: cp ./README-o.md ./README.md -f
+        run: |
+          ls
+          cp ./README-o.md ./README.md -f
+          
       - name: Run Statistic
         run: |
           python3 prepare.py -t
