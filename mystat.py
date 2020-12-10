@@ -1,6 +1,6 @@
 import os
 import time
-import wc
+from wc import files
 
 
 class WordStat:
@@ -51,7 +51,7 @@ class Statics:
             before = self.former[t[0]]
         if before != t[1]:
             print(t[0]+'\t'+str(before)+'->'+str(t[1]))
-            wc.files.append(t[0])
+            files.append(t[0])
 
     def length(self, str):
         res = 0
