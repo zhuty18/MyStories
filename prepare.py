@@ -39,8 +39,9 @@ args = terminal()
 myPath = os.getcwd() + '/' + args.workpath
 if args.travis:
     import mystat
-    import wc
     mystat.WordStat(myPath, 'time')
+    autoCommit('update')
+    os.system('git push')
 else:
     if args.doc:
         import doc
