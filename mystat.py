@@ -5,7 +5,7 @@ import wc
 
 class WordStat:
     dirs = []
-    log = ['# online statistic result']
+    log = ['\n# online statistic result']
 
     def __init__(self, path, order, online=False):
         WordStat.dirs.append(Statistic(path, order))
