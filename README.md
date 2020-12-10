@@ -2,6 +2,8 @@
 
 This project is used as an archive for all of my stories.
 
+# online statistic result
+
 # Scripts
 
 `python3 -m pip install --user -r requirements.txt`
@@ -20,7 +22,7 @@ use argument `-m [your message]` to change commit message
 
 prepare for commit
 
-`python prepare.py`
+`python3 prepare.py`
 
 use argument `-p` to set the work path
 
@@ -29,6 +31,8 @@ use argument `-s` to disable auto word statics and word cloud
 use argument `-w` to assign the file to draw word cloud
 
 use argument `-d` to format files
+
+use argument `-t` for online mode
 
 ### Word Statistics
 
@@ -57,5 +61,3 @@ support doc, docx, txt
 search.py
 
 `python3 search.py [keyword]`
-
-# online statistic result
