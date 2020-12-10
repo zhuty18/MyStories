@@ -4,7 +4,9 @@ This project is used as an archive for all of my stories.
 
 # files changed at last commit
 
-no file is changed.
+|文件名|上次提交时字数|本次提交字数|
+|:-|:-|:-|
+|与生俱来|80734|80758|
 
 # Scripts
 
