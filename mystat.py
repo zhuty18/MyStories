@@ -5,17 +5,20 @@ import wc
 
 class WordStat:
     dirs = []
+    log = ['online statistic result']
 
     def __init__(self, path, order, online=False):
-        WordStat.dirs.append(Statics(path, order))
+        WordStat.dirs.append(Statistic(path, order))
         if online:
-            print('online static result')
+            f = open(os.getcwd()+'/statistic.log', 'w', encoding='utf-8')
+            f.writelines(self.log)
+            f.close()
         else:
             for i in self.dirs:
                 i.writeResults()
 
 
-class Statics:
+class Statistic:
     def __init__(self, path, order):
         self.finish = []
         self.unfinished = []
@@ -53,7 +56,7 @@ class Statics:
         if t[0] in self.former.keys():
             before = self.former[t[0]]
         if before != t[1]:
-            print(t[0]+'\t'+str(before)+'->'+str(t[1]))
+            WordStat.log.append(t[0]+'\t'+str(before)+'->'+str(t[1]))
             wc.files.append(t[0])
 
     def length(self, str):
@@ -158,6 +161,6 @@ class Statics:
         for i in list:
             subdir = os.path.join(path, i)
             if os.path.isdir(subdir) and not subdir.__contains__('参考'):
-                WordStat.dirs.append(Statics(subdir, self.sort))
+                WordStat.dirs.append(Statistic(subdir, self.sort))
             else:
                 self.stat(subdir, i)
