@@ -1,9 +1,12 @@
 import os
-import jieba
-import jieba.analyse
-import wordcloud
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
+try:
+    import jieba
+    import jieba.analyse
+    import wordcloud
+    import matplotlib.pyplot as plt
+    import matplotlib.font_manager as fm
+except ModuleNotFoundError:
+    pass
 
 files = []
 
