@@ -39,8 +39,9 @@ args = terminal()
 myPath = os.getcwd() + '/' + args.workpath
 if args.travis:
     import mystat
-    mystat.WordStat(myPath, 'time')
-    autoCommit('update')
+    mystat.WordStat(myPath, 'name')
+    os.system('git add .')
+    os.system('git commit -m \"update readme\"')
     os.system('git push')
 else:
     if args.doc:

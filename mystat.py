@@ -74,8 +74,12 @@ class Statics:
         if len(self.unfinished)+len(self.finish)+len(self.other) > 0:
             f = open(self.path+'/README.md', 'w', encoding='utf-8')
             f.write('# Word Stat Result\n\n')
-            str = '|名称|字数|修改时间|\n'
-            str += '|:-|:-|:-|\n'
+            if self.sort == 'name':
+                str = '|名称|字数|\n'
+                str += '|:-|:-|\n'
+            else:
+                str = '|名称|字数|修改时间|\n'
+                str += '|:-|:-|:-|\n'
             if len(self.unfinished) > 0:
                 f.write('## To Be Continued\n\n')
                 f.write(str)
@@ -126,7 +130,8 @@ class Statics:
                 type = 'unfinished'
             info = '|['+name[0:-3]+']('+name+')|'
             info += str(num)+'|'
-            info += self.changeTime(path)+'|'
+            if self.sort == 'time':
+                info += self.changeTime(path)+'|'
             self.write(info, type)
 
     def getAllFiles(self, path):
