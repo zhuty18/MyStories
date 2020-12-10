@@ -5,11 +5,17 @@ import wc
 
 class WordStat:
     dirs = []
+    log = []
 
-    def __init__(self, path, order):
+    def __init__(self, path, order, online=False):
         WordStat.dirs.append(Statics(path, order))
-        for i in self.dirs:
-            i.writeResults()
+        if online:
+            f = open(os.getcwd()+'/static.log', 'w', encoding='utf-8')
+            f.writelines(self.log)
+            f.close()
+        else:
+            for i in self.dirs:
+                i.writeResults()
 
 
 class Statics:
@@ -50,7 +56,7 @@ class Statics:
         if t[0] in self.former.keys():
             before = self.former[t[0]]
         if before != t[1]:
-            print(t[0]+'\t'+str(before)+'->'+str(t[1]))
+            WordStat.log.append(t[0]+'\t'+str(before)+'->'+str(t[1]))
             wc.files.append(t[0])
 
     def length(self, str):
