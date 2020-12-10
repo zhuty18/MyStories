@@ -25,11 +25,6 @@ jobs:
           git config --global user.email zhuty18@mails.tsinghua.edu.cn
           git config --global user.name zhuty18
 
-      - name: Copy Readme
-        run: |
-          ls
-          cp ./README-o.md ./README.md -f
-
       - name: Run Statistic
         run: |
           python3 prepare.py -t

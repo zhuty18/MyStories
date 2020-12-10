@@ -10,8 +10,15 @@ class WordStat:
     def __init__(self, path, order, online=False):
         WordStat.dirs.append(Statistic(path, order))
         if online:
-            f = open(os.getcwd()+'/README.md', 'a', encoding='utf-8')
+            f = open(os.getcwd()+'/README.md', 'w', encoding='utf-8')
+            f1 = open('README-o.md', 'r', encoding='utf-8')
+            f.writelines(f1.readlines())
+            f1.close()
             f.write('\n\n'.join(self.log))
+            f.write('\n\n')
+            f2 = open('README-s.md', 'r', encoding='utf-8')
+            f.writelines(f2.readlines())
+            f2.close()
             f.close()
         else:
             for i in self.dirs:
