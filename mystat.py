@@ -5,24 +5,11 @@ import wc
 
 class WordStat:
     dirs = []
-    log = ['\n# online statistic result']
 
-    def __init__(self, path, order, online=False):
+    def __init__(self, path, order):
         WordStat.dirs.append(Statistic(path, order))
-        if online:
-            f = open(os.getcwd()+'/README.md', 'w', encoding='utf-8')
-            f1 = open('README-o.md', 'r', encoding='utf-8')
-            f.writelines(f1.readlines())
-            f1.close()
-            f.write('\n\n'.join(self.log))
-            f.write('\n\n')
-            f2 = open('README-s.md', 'r', encoding='utf-8')
-            f.writelines(f2.readlines())
-            f2.close()
-            f.close()
-        else:
-            for i in self.dirs:
-                i.writeResults()
+        for i in self.dirs:
+            i.writeResults()
 
 
 class Statistic:
@@ -63,7 +50,7 @@ class Statistic:
         if t[0] in self.former.keys():
             before = self.former[t[0]]
         if before != t[1]:
-            WordStat.log.append(t[0]+'\t'+str(before)+'->'+str(t[1]))
+            print(t[0]+'\t'+str(before)+'->'+str(t[1]))
             wc.files.append(t[0])
 
     def length(self, str):
