@@ -1,9 +1,12 @@
+# This is a basic workflow to help you get started with Actions
+
 name: python ci
 
+# Controls when the action will run. 
 on:
   push:
     branches: [ master ]
-  jobs:
+jobs:
   start:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +24,7 @@ on:
         run: |
           git config --global user.email zhuty18@mails.tsinghua.edu.cn
           git config --global user.name zhuty18
-  stat:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Copy Readme
