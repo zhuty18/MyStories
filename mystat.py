@@ -10,6 +10,7 @@ class WordStat:
     def __init__(self, path, order, online=False):
         WordStat.dirs.append(Statistic(path, order))
         if online:
+            print(os.getcwd()+'/statistic.log')
             f = open(os.getcwd()+'/statistic.log', 'w', encoding='utf-8')
             f.writelines(self.log)
             f.close()
