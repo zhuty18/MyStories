@@ -28,6 +28,8 @@ def terminal():
                         default='name', nargs='?', const='time')
     parser.add_argument('-p', '--push', type=bool,
                         default=True, nargs='?', const=False)
+    parser.add_argument('-t', '--travis', type=bool,
+                        default=False, nargs='?', const=True)
     args = parser.parse_args()
     return args
 
@@ -35,18 +37,24 @@ def terminal():
 args = terminal()
 # print(args)
 myPath = os.getcwd() + '/' + args.workpath
-if args.doc:
-    import doc
-    doc.getAllFiles(myPath)
-if args.statics:
+if args.travis:
     import mystat
     import wc
-    mystat.WordStat(myPath, args.sortorder)
-    if args.wordcloud == '':
-        wc.WordPic(path=myPath, job='p')
-    else:
-        wc.WordPic(path=myPath, job='p', file=[args.wordcloud])
-if args.autocommit:
-    autoCommit(args.message)
-    if args.push:
-        os.system('git push')
+    mystat.WordStat(myPath, 'time')
+    print(wc.files)
+else:
+    if args.doc:
+        import doc
+        doc.getAllFiles(myPath)
+    if args.statics:
+        import mystat
+        import wc
+        mystat.WordStat(myPath, args.sortorder)
+        if args.wordcloud == '':
+            wc.WordPic(path=myPath, job='p')
+        else:
+            wc.WordPic(path=myPath, job='p', file=[args.wordcloud])
+    if args.autocommit:
+        autoCommit(args.message)
+        if args.push:
+            os.system('git push')
