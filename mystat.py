@@ -1,6 +1,5 @@
 import os
 import time
-from xpinyin import Pinyin
 import wc
 
 
@@ -134,6 +133,7 @@ class Statics:
         list = os.listdir(path)
         result = []
         if self.sort == 'name':
+            from xpinyin import Pinyin
             pin = Pinyin()
             for item in list:
                 result.append((pin.get_pinyin(item), item))
