@@ -21,7 +21,7 @@ on:
         run: |
           git config --global user.email zhuty18@mails.tsinghua.edu.cn
           git config --global user.name zhuty18
-  build:
+  stat:
     runs-on: ubuntu-latest
     steps:
       - name: Copy Readme
