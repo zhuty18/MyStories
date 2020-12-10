@@ -41,7 +41,6 @@ if args.travis:
     import mystat
     import wc
     mystat.WordStat(myPath, 'time')
-    print(wc.files)
 else:
     if args.doc:
         import doc
