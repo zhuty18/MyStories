@@ -9,6 +9,9 @@ on:
       - master
     paths:
       - '**.md'
+    paths-ignore:
+      - 'README.md'
+      - '**/README.md'
 jobs:
   build:
     runs-on: ubuntu-latest
