@@ -5,7 +5,10 @@ name: python ci
 # Controls when the action will run. 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+    paths:
+      - '**.md'
 jobs:
   build:
     runs-on: ubuntu-latest
