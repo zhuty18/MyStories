@@ -43,9 +43,11 @@ if args.online:
     online.Online(os.getcwd())
     # import mystat
     # mystat.WordStat(myPath, 'time')
-    os.system('git add .')
-    os.system('git commit -m \"update readme\"')
-    os.system('git push')
+    mes = time.strftime("%m.%d %H:%M", time.gmtime()+8*3600)+' '
+    print(mes)
+    # os.system('git add .')
+    # os.system('git commit -m \"'+mes+'update readme\"')
+    # os.system('git push')
 else:
     if args.doc:
         import doc
