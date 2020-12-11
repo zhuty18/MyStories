@@ -7,11 +7,10 @@ on:
   push:
     branches:
       - master
-    paths:
-      - '**.md'
     paths-ignore:
       - 'README.md'
       - '**/README.md'
+      - '**.py'
 jobs:
   build:
     runs-on: ubuntu-latest
