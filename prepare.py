@@ -5,7 +5,7 @@ import argparse
 
 
 def autoCommit(message):
-    mes = time.strftime("%m.%d %H:%M", time.localtime())+' '
+    mes = time.strftime("%m.%d %H:%M", time.gmtime(time.time()+8*3600))+' '
     mes += message
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
@@ -44,10 +44,9 @@ if args.online:
     # import mystat
     # mystat.WordStat(myPath, 'time')
     mes = time.strftime("%m.%d %H:%M", time.gmtime(time.time()+8*3600))+' '
-    print(mes)
-    # os.system('git add .')
-    # os.system('git commit -m \"'+mes+'update readme\"')
-    # os.system('git push')
+    os.system('git add .')
+    os.system('git commit -m \"'+mes+'update readme\"')
+    os.system('git push')
 else:
     if args.doc:
         import doc
