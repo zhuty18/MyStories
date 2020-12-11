@@ -10,7 +10,8 @@ def autoCommit(message):
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
-    os.system('git pull')
+    if not args.online:
+        os.system('git pull')
     if args.push:
         os.system('git push')
 
