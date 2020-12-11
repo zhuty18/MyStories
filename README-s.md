@@ -12,13 +12,15 @@ use argument `-c` to disable commit function
 
 use argument `-m [your message]` to change commit message
 
+use argument `-p` to disable push
+
 ## Scripts
 
 prepare for commit
 
 `python3 prepare.py`
 
-use argument `-p` to set the work path
+use argument `-path` to set the work path
 
 use argument `-s` to disable auto word statics and word cloud
 
@@ -32,9 +34,9 @@ use argument `-t` for online mode
 
 mystat.py
 
-default sorting is by file name
+default sorting is by last changed time
 
-use argument `-o` to sort by last changed time
+use argument `-o` to sort by file name
 
 ### Word Cloud Picture
 

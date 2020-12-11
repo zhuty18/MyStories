@@ -25,7 +25,7 @@ def terminal():
     parser.add_argument('-d', '--doc', type=bool,
                         default=False, nargs='?', const=True)
     parser.add_argument('-o', '--sortorder', type=str,
-                        default='name', nargs='?', const='time')
+                        default='time', nargs='?', const='name')
     parser.add_argument('-p', '--push', type=bool,
                         default=True, nargs='?', const=False)
     parser.add_argument('-t', '--online', type=bool,
