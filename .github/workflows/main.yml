@@ -18,7 +18,7 @@ jobs:
           python-version: 3.7
       
       - name: install
-        run: pip install xpinyin
+        run: pip install gitpython
       
       - name: prepare git
         run: |
