@@ -43,7 +43,7 @@ if args.online:
     online.Online(os.getcwd())
     # import mystat
     # mystat.WordStat(myPath, 'time')
-    mes = time.strftime("%m.%d %H:%M", time.gmtime()+8*3600)+' '
+    mes = time.strftime("%m.%d %H:%M", time.gmtime(time.time()+8*3600))+' '
     print(mes)
     # os.system('git add .')
     # os.system('git commit -m \"'+mes+'update readme\"')
