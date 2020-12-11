@@ -40,8 +40,8 @@ class Online:
             if name in self.history.keys():
                 before = self.history[name]
             if before != num:
-                self.log.append('|'+name.replace('.md', '') +
-                                '|'+str(before)+'|'+str(num)+'|')
+                self.log.append('|'+name.replace('.md', '') + '|' +
+                                str(before)+'|'+str(num)+'|'+str(num-before)+'|')
             self.history[name] = num
 
     def writeResult(self):
@@ -51,8 +51,8 @@ class Online:
         f1.close()
         f.write('\n# files changed at last commit\n\n')
         if len(self.log) != 0:
-            f.write('|文件名|上次提交时字数|本次提交字数|\n')
-            f.write('|:-|:-|:-|\n')
+            f.write('|文件名|上次提交时字数|本次提交字数|字数变化|\n')
+            f.write('|:-|:-|:-|:-|\n')
             f.write('\n'.join(self.log))
         else:
             f.write('no file is changed.')

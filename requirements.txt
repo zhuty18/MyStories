@@ -2,3 +2,4 @@ xpinyin
 jieba
 wordcloud
 matplotlib
+gitpython

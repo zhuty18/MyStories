@@ -1,6 +1,9 @@
 import os
 import time
 import wc
+import git
+
+repo = git.Repo('./')
 
 
 class WordStat:
@@ -83,18 +86,18 @@ class Statistic:
             if len(self.unfinished) > 0:
                 f.write('## To Be Continued\n\n')
                 f.write(str)
-                for i in self.unfinished:
-                    f.write(i+'\n')
+                f.write('\n'.join(self.unfinished))
+                f.write('\n')
             if len(self.finish) > 0:
                 f.write('\n## Finished\n\n')
                 f.write(str)
-                for i in self.finish:
-                    f.write(i+'\n')
+                f.write('\n'.join(self.finish))
+                f.write('\n')
             if len(self.other) > 0:
                 f.write('\n## Others\n\n')
                 f.write(str)
-                for i in self.other:
-                    f.write(i+'\n')
+                f.write('\n'.join(self.other))
+                f.write('\n')
             f.close()
 
     def write(self, info, type):
@@ -106,14 +109,13 @@ class Statistic:
         else:
             self.other.append(info)
 
-    def changeTime(self, path):
-        t = os.path.getmtime(path)
-        t = time.localtime(t)
+    def changeTime(self, timestamp):
+        t = time.gmtime(timestamp+8*3600)
         res = str(t.tm_mon).zfill(2)+'.'+str(t.tm_mday).zfill(2) + \
             ' '+str(t.tm_hour).zfill(2)+':'+str(t.tm_min).zfill(2)
         return res
 
-    def stat(self, path, name):
+    def stat(self, path, name, timestamp):
         if name.endswith('.md') and (not name.__contains__('README')):
             file = open(path, 'r', encoding='utf-8')
             type = ''
@@ -131,7 +133,7 @@ class Statistic:
             info = '|['+name[0:-3]+']('+name+')|'
             info += str(num)+'|'
             if self.sort == 'time':
-                info += self.changeTime(path)+'|'
+                info += self.changeTime(timestamp)+'|'
             self.write(info, type)
 
     def getAllFiles(self, path):
@@ -146,15 +148,23 @@ class Statistic:
         elif self.sort == 'time':
             for item in list:
                 subdir = os.path.join(path, item)
-                time = os.path.getmtime(subdir)
-                result.append((time, item))
+                file = subdir.replace(os.getcwd(), '.')
+                file = file.replace('\\', '/')
+                print(file)
+                # print(repo.ignored(file))
+                if not file.__contains__('.git') and not repo.ignored(file):
+                    commit = repo.iter_commits(
+                        paths=file, max_count=1).__next__()
+                    t = commit.committed_date
+                    result.append((t, item))
             result.sort()
             result.reverse()
+            # print(result)
         for i in range(len(result)):
-            list[i] = result[i][1]
+            list[i] = (result[i][1], result[i][0])
         for i in list:
-            subdir = os.path.join(path, i)
+            subdir = os.path.join(path, i[0])
             if os.path.isdir(subdir) and not subdir.__contains__('参考'):
                 WordStat.dirs.append(Statistic(subdir, self.sort))
             else:
-                self.stat(subdir, i)
+                self.stat(subdir, i[0], i[1])
