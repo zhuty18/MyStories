@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: python ci
+
+# Controls when the action will run. 
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**.md'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      
+      - name: install
+        run: pip install gitpython
+      
+      - name: prepare git
+        run: |
+          git config --global user.email zhuty18@mails.tsinghua.edu.cn
+          git config --global user.name zhuty18
+
+      - name: Run Statistic
+        run: |
+          python3 prepare.py -t
