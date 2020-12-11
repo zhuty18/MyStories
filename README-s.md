@@ -57,3 +57,11 @@ support doc, docx, txt
 search.py
 
 `python3 search.py [keyword]`
+
+### Format Files
+
+formatter.py
+
+support plaintext, markdown, python
+
+`python3 formatter.py`
