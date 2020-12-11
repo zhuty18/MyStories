@@ -1,3 +1,4 @@
+# coding=utf-8
 import os
 import time
 import argparse
@@ -40,8 +41,8 @@ myPath = os.getcwd() + '/' + args.workpath
 if args.online:
     import online
     online.Online(os.getcwd())
-    import mystat
-    mystat.WordStat(myPath, 'time')
+    # import mystat
+    # mystat.WordStat(myPath, 'time')
     os.system('git add .')
     os.system('git commit -m \"update readme\"')
     os.system('git push')
