@@ -6,7 +6,7 @@ def formatter(path):
     list = os.listdir(path)
     for i in list:
         subdir = os.path.join(path, i)
-        if os.path.isdir(subdir):
+        if os.path.isdir(subdir) and not subdir.__contains__('/.'):
             formatter(subdir)
         elif subdir.endswith('.md') or subdir.endswith('.txt') or subdir.endswith('.py'):
             f = open(subdir, 'r', encoding='utf-8')
