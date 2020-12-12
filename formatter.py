@@ -1,6 +1,7 @@
 # coding=utf-8
 import os
 
+
 def formatter(path):
     list = os.listdir(path)
     for i in list:

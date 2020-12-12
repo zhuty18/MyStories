@@ -1,3 +1,4 @@
+# coding=utf-8
 import docx
 import os
 from win32com import client as wc
