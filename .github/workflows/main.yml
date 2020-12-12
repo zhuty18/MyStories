@@ -7,8 +7,11 @@ on:
   push:
     branches:
       - master
-    paths:
-      - '**.md'
+    paths-ignore:
+      - '**/README.md'
+      - '**.txt'
+      - '**.'
+      - '**.py'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +30,7 @@ jobs:
         run: |
           git config --global user.email zhuty18@mails.tsinghua.edu.cn
           git config --global user.name zhuty18
+          git config --global core.autocrlf input
 
       - name: Run Statistic
         run: |

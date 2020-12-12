@@ -5,11 +5,15 @@ import argparse
 
 
 def autoCommit(message):
-    mes = time.strftime("%m.%d %H:%M", time.localtime())+' '
+    mes = time.strftime("%m.%d %H:%M", time.gmtime(time.time()+8*3600))+' '
     mes += message
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
+    if not args.online:
+        os.system('git pull')
+    if args.push:
+        os.system('git push')
 
 
 def terminal():
@@ -43,9 +47,7 @@ if args.online:
     online.Online(os.getcwd())
     # import mystat
     # mystat.WordStat(myPath, 'time')
-    os.system('git add .')
-    os.system('git commit -m \"update readme\"')
-    os.system('git push')
+    autoCommit('update readme')
 else:
     if args.doc:
         import doc
@@ -60,5 +62,3 @@ else:
             wc.WordPic(path=myPath, job='p', file=[args.wordcloud])
     if args.autocommit:
         autoCommit(args.message)
-        if args.push:
-            os.system('git push')

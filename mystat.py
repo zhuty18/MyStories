@@ -165,7 +165,7 @@ class Statistic:
             list[i] = (result[i][1], result[i][0])
         for i in list:
             subdir = os.path.join(path, i[0])
-            if os.path.isdir(subdir) and not subdir.__contains__('参考'):
+            if os.path.isdir(subdir) and not subdir.__contains__('参考') and not subdir.__contains__('/.'):
                 WordStat.dirs.append(Statistic(subdir, self.sort))
             else:
                 self.stat(subdir, i[0], i[1])
