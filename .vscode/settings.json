@@ -79,5 +79,8 @@
     "smallville",
     "unfixable",
     "wayyyne"
-  ]
+  ],
+  "files.associations": {
+    "vector": "cpp"
+  }
 }
