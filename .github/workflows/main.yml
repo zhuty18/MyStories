@@ -6,7 +6,7 @@ on:
       - master
     paths-ignore:
       - '**/README.md'
-      - 'README-*.md'
+      - 'README-**.md'
       - '**.txt'
       - '.gitignore'
       - '**.py'
@@ -28,7 +28,7 @@ jobs:
       - name: prepare git
         run: |
           git config --global user.email zhuty18@mails.tsinghua.edu.cn
-          git config --global user.name zhuty18
+          git config --global user.name zhuty18-ci
           git config --global core.autocrlf input
           git config --global core.safecrlf true
 
