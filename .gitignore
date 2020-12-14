@@ -13,4 +13,4 @@
 *.ttf
 __pycache__/
 *.pyc
-# .vscode/
+.vscode/
