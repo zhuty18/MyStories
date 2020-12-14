@@ -87,6 +87,6 @@
 
 ## 统计文件内各部分的字数
 
-`python3 filestat.py [filename]`
+`python3 file.py [filename]`
 
 根据 MarkDown 的各级标题，把文件切分为若干部分，统计每一部分的字数，并在终端打印出结果
