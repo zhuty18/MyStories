@@ -80,7 +80,15 @@
     "unfixable",
     "wayyyne"
   ],
-  "files.associations": {
-    "vector": "cpp"
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "[FMOQStXY]**": true,
+    "DM": true,
+    "文稿": true
   }
 }
