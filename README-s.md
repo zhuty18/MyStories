@@ -1,77 +1,92 @@
 # Scripts
 
-`python3 -m pip install --user -r requirements.txt`
+## 使用方法
 
-install requirements
+1. 安装 python
 
-## Auto Commit
+   开发使用的 python 版本是 3.7.4，在 Ubuntu20.04 上，用 python3.8 做过测试。
 
-insert in prepare.py
+   请确保安装的 python 版本不低于 3.7。
 
-use argument `-c` to disable commit function
+2. 安装依赖
 
-use argument `-m [your message]` to change commit message
+   执行命令`python3 -m pip install --user -r requirements.txt`即可
 
-use argument `-p` to disable push
+3. 根据你需要的功能运行脚本
 
-## Scripts
+## 主要功能
 
-prepare for commit
+执行命令`python3 prepare.py`
 
-`python3 prepare.py`
+在[prefer.py](./prefer.py)中进行了一些默认值的设定，请根据自己的喜好进行修改
 
-use argument `-path` to set the work path
+### 自动使用 git 提交
 
-use argument `-s` to disable auto word statics and word cloud
+相关参数如下
+|参数|含义|效果|
+|:-|:-|:-|
+|-c|是否提交|使用此参数，提交行为与默认值不同|
+|-m|提交信息|与`git commit -m [message]`的效果类似，但脚本会在输入的信息前增加时间信息（东八区）<br>如果不使用此参数，则会按照默认的信息提交|
+|-p|是否推送到远程分支|使用此参数，推送行为与默认值不同|
 
-use argument `-w` to assign the file to draw word cloud
+如果不提交，则后两项参数没有意义。
 
-use argument `-d` to format files
+### 字数统计
 
-use argument `-t` for online mode
+从工作文件夹起，统计其与其所有子文件夹（多层嵌套）内各自存在的 MarkDown 文档的字数，在对应路径下生成 README.md 文件。
 
-### Word Statistics
+会根据是否完成进行分类，文档内包含"END"（大小写敏感）会被认为是完成的作品，不包含则是未完成的作品。
 
-mystat.py
+相关参数如下
+|参数|含义|效果|
+|:-|:-|:-|
+|-path|工作路径|在参数后输入需要进行字数统计的文件夹路径<br>（如果有主要工作的文件夹，建议直接修改默认值）|
+|-s|字数统计|使用此参数，统计行为与默认值不同|
+|-o|排序顺序|使用此参数，排序方法与默认值不同|
+|-wc|词云展示|默认会展示此次统计结果与既有结果不同的所有文件<br>使用此参数，可设定词云展示的关键词，所有文件名包含有此关键词的 MarkDown 文件都会被统计|
 
-default sorting is by last changed time
+- 词云展示
+  - 为了展示出中文词云，需要在根目录下添加 myfont.ttf，作为生成词云时使用的字体
+  - 为了更好地生成词云，在"mydict"文件（使用任意文本编辑器打开均可）文件里添加需要区分开的词语
 
-use argument `-o` to sort by file name
+## 线上 CI 更新文件字数变化
 
-### Word Cloud Picture
+使用 GitHub Actions，在推送改变了 MarkDown 文档字数（README 除外）的提交时，会自动运行此 CI 改变根目录的 README.md，把文档的字数改变添加进去，并重新推送到远程分支。
 
-wc.py
+使用的 CI 脚本是[.github/workflows/main.yml](.github/workflows/main.yml)
 
-s for save, p for perform, r for remove. Multiple using supported.
+若不想使用此功能，把该脚本删除即可。
 
-list of key words in file name parameter supported.
+若想要使用此功能，请把该脚本中的 git 信息改为自己的。
 
-### Format Change Into MarkDown
+## 把现有文档改变为 MarkDown 文件
 
-doc.py
+`python3 doc.py`
 
-support doc, docx, txt
+支持.doc、.docx、.txt，把其中的文本放置到同名的 MarkDown 文件中
 
-### Search All Files For Key Word
+对子目录递推，根目录是 prefer.py 中的工作路径
 
-search.py
+| 参数 | 效果                                                 |
+| :--- | :--------------------------------------------------- |
+| -r   | 使用此参数，则在生成 MarkDown 文件后会把原始文件删除 |
 
-`python3 search.py [keyword]`
+## 搜索文件内容
 
-### Format Files
+`python3 search.py [关键词]`
 
-formatter.py
+会在工作路径下的所有 MarkDown 中搜索给定的关键词，在终端打印出结果
 
-support plaintext, markdown, python
+## 校正换行符
 
 `python3 formatter.py`
 
-### More Specific Word Statics
+从根目录起，把.txt 和.md 文件中的行尾符纠正为对应操作系统的；段首尾空白字符去除
 
-filestat.py
+把.py 文件的行尾符纠正为对应操作系统的
 
-only support MarkDown files.
+## 统计文件内各部分的字数
 
-one file each time, result will be write into ./result.md
+`python3 filestat.py [filename]`
 
-`python3 filestat.py [filepath]`
+根据 MarkDown 的各级标题，把文件切分为若干部分，统计每一部分的字数，并在终端打印出结果

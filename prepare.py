@@ -2,6 +2,14 @@
 import os
 import time
 import argparse
+import prefer as me
+
+
+otherorder = ''
+if me.order is 'time':
+    otherorder = 'name'
+elif me.order is 'name':
+    otherorder = 'time'
 
 
 def autoCommit(message):
@@ -19,20 +27,18 @@ def autoCommit(message):
 def terminal():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--autocommit', type=bool,
-                        default=True, nargs='?', const=False)
-    parser.add_argument('-m', '--message', default='update')
+                        default=me.commit, nargs='?', const=(not me.commit))
+    parser.add_argument('-m', '--message', default=me.message)
     parser.add_argument('-path', '--workpath', type=str,
-                        default='DC', nargs='?', const='')
-    parser.add_argument('-s', '--statics', type=bool,
-                        default=True, nargs='?', const=False)
+                        default=me.myPath, nargs='?', const='')
+    parser.add_argument('-s', '--statistic', type=bool,
+                        default=me.wordStat, nargs='?', const=(not me.wordStat))
     parser.add_argument('-w', '--wordcloud', type=str,
                         default='')
-    parser.add_argument('-d', '--doc', type=bool,
-                        default=False, nargs='?', const=True)
     parser.add_argument('-o', '--sortorder', type=str,
-                        default='time', nargs='?', const='name')
+                        default=me.order, nargs='?', const=otherorder)
     parser.add_argument('-p', '--push', type=bool,
-                        default=True, nargs='?', const=False)
+                        default=me.push, nargs='?', const=(not me.push))
     parser.add_argument('-t', '--online', type=bool,
                         default=False, nargs='?', const=True)
     args = parser.parse_args()
@@ -41,7 +47,7 @@ def terminal():
 
 args = terminal()
 # print(args)
-myPath = os.getcwd() + '/' + args.workpath
+path = os.getcwd() + '/' + args.workpath
 if args.online:
     import online
     online.Online(os.getcwd())
@@ -49,16 +55,13 @@ if args.online:
     # mystat.WordStat(myPath, 'time')
     autoCommit('update readme')
 else:
-    if args.doc:
-        import doc
-        doc.getAllFiles(myPath)
-    if args.statics:
+    if args.statistic:
         import mystat
         import wc
-        mystat.WordStat(myPath, args.sortorder)
+        mystat.WordStat(path, args.sortorder)
         if args.wordcloud == '':
-            wc.WordPic(path=myPath, job='p')
+            wc.WordPic(path=path, job=me.wordCloudJob)
         else:
-            wc.WordPic(path=myPath, job='p', file=[args.wordcloud])
+            wc.WordPic(path=path, job=me.wordCloudJob, file=[args.wordcloud])
     if args.autocommit:
         autoCommit(args.message)

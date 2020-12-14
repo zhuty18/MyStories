@@ -1,5 +1,5 @@
 # My Stories
 
-This project is used as an archive for all of my stories.
+这个项目的本意是为我个人写过的故事做一个线上存档。
 
-Release版本是纯代码，对所有人开放。建议的使用方法，在项目下建立工作文件夹，在工作文件夹内进行写作。（P.S.请手动修改prepare.py中-path一项的缺省值，将其调整为主要的工作目录）
+基于我个人的需求，我开发了一些python脚本。我认为这些脚本是具有复用性的，所以把它们单独放到了release分支上，对所有人开放，下面是一些具体说明。

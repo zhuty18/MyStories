@@ -2,6 +2,8 @@
 import os
 import platform
 import docx
+import argparse
+import prefer
 try:
     from win32com import client as wc
 except ImportError:
@@ -9,9 +11,9 @@ except ImportError:
     print('Your are on '+platform.system()+' OS!')
 
 
-def stat(path, name):
+def toMD(path, name, rm):
     if name.startswith('~'):
-        os.remove(path)
+        pass
     elif name.endswith('.docx'):
         print(name)
         file = docx.Document(path)
@@ -19,7 +21,6 @@ def stat(path, name):
         outfile.write("# ")
         for p in file.paragraphs:
             outfile.write(p.text+'\n\n')
-        os.remove(path)
         outfile.close()
     elif name.endswith('.doc'):
         word = wc.Dispatch('Word.Application')
@@ -28,24 +29,33 @@ def stat(path, name):
                    False, False, False, False)  # 转化后路径下的文件
         doc.Close()
         word.Quit()
-        os.remove(path)
-        stat(path+'x', name+'x')
+        toMD(path+'x', name+'x', rm)
     elif name.endswith('.txt'):
         print(name)
-        fi = open(path, 'r')
+        fi = open(path, 'r', encoding='utf-8')
         fo = open(path.replace('.txt', '.md'), 'w', encoding='utf-8')
-        fo.write(fi.read())
+        for i in fi.readlines():
+            fo.write(i+'\n')
         fi.close()
         fo.close()
-        os.remove(path)
+    if rm:
+        # os.remove(path)
+        print(path)
 
 
-def getAllFiles(path):
+def getAllFiles(path, rm):
     list = os.listdir(path)
     list.sort()
     for i in list:
         subdir = os.path.join(path, i)
-        if os.path.isdir(subdir):
-            getAllFiles(subdir)
+        if os.path.isdir(subdir) and not subdir.__contains__('.git'):
+            getAllFiles(subdir, rm)
         else:
-            stat(subdir, i)
+            toMD(subdir, i, rm)
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-r', '--remove', type=bool,
+                    default=False, nargs='?', const=True)
+args = parser.parse_args()
+getAllFiles(os.getcwd()+'/'+prefer.myPath, args.remove)

@@ -50,13 +50,11 @@ class Online:
         f1 = open('README-o.md', 'r', encoding='utf-8')
         f.writelines(f1.readlines())
         f1.close()
-        f.write('\n# files changed at last commit\n\n')
         if len(self.log) != 0:
+            f.write('\n# files changed at last commit\n\n')
             f.write('|文件名|上次提交时字数|本次提交字数|字数变化|\n')
             f.write('|:-|:-|:-|:-|\n')
             f.write('\n'.join(self.log))
-        else:
-            f.write('no file is changed.')
         f.write('\n\n')
         f2 = open('README-s.md', 'r', encoding='utf-8')
         f.writelines(f2.readlines())
