@@ -12,8 +12,8 @@ class WordStat:
 
     def __init__(self, path, order):
         WordStat.dirs.append(Statistic(path, order))
-        for i in self.dirs:
-            i.writeResults()
+        # for i in self.dirs:
+        #     i.writeResults()
 
 
 class Statistic:
@@ -28,9 +28,10 @@ class Statistic:
         self.dir = self.dir[1:]
         self.readHistory()
         self.getAllFiles(path)
+        self.writeResults()
 
     def readHistory(self):
-        if os.path.exists(self.path+'/README.md'):
+        if os.path.exists(self.path+'/README.md') and self.path != os.getcwd()+'/':
             f = open(self.path+'/README.md', 'r', encoding='utf-8')
             l = f.readlines()
             f.close()
