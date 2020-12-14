@@ -65,3 +65,13 @@ formatter.py
 support plaintext, markdown, python
 
 `python3 formatter.py`
+
+### More Specific Word Statics
+
+filestat.py
+
+only support MarkDown files.
+
+one file each time, result will be write into ./result.md
+
+`python3 filestat.py [filepath]`

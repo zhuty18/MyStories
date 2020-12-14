@@ -2,6 +2,8 @@
 
 This project is used as an archive for all of my stories.
 
+Release版本是纯代码，对所有人开放。建议的使用方法，在项目下建立工作文件夹，在工作文件夹内进行写作。（P.S.请手动修改prepare.py中-path一项的缺省值，将其调整为主要的工作目录）
+
 # files changed at last commit
 
 no file is changed.
@@ -65,3 +67,21 @@ support doc, docx, txt
 search.py
 
 `python3 search.py [keyword]`
+
+### Format Files
+
+formatter.py
+
+support plaintext, markdown, python
+
+`python3 formatter.py`
+
+### More Specific Word Statics
+
+filestat.py
+
+only support MarkDown files.
+
+one file each time, result will be write into ./result.md
+
+`python3 filestat.py [filepath]`

@@ -1,6 +1,12 @@
-import docx
+# coding=utf-8
 import os
-from win32com import client as wc
+import platform
+import docx
+try:
+    from win32com import client as wc
+except ImportError:
+    print('This script is only runnable on Windows OS.')
+    print('Your are on '+platform.system()+' OS!')
 
 
 def stat(path, name):
