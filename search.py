@@ -1,6 +1,7 @@
 # coding=utf-8
 import os
 import sys
+import prefer
 
 
 class Searcher:
@@ -32,4 +33,4 @@ class Searcher:
 
 
 key = sys.argv[1]
-Searcher(os.getcwd()+'/DC', key)
+Searcher(os.getcwd()+'/'+prefer.myPath, key)

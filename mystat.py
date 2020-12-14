@@ -20,7 +20,7 @@ class Statistic:
     def __init__(self, path, order):
         self.finish = []
         self.unfinished = []
-        self.other = []
+        # self.other = []
         self.path = path
         self.sort = order
         self.dir = path.replace(os.getcwd(), '')
@@ -75,7 +75,7 @@ class Statistic:
         return res
 
     def writeResults(self):
-        if len(self.unfinished)+len(self.finish)+len(self.other) > 0:
+        if len(self.unfinished)+len(self.finish) > 0:
             f = open(self.path+'/README.md', 'w', encoding='utf-8')
             f.write('# Word Stat Result\n\n')
             if self.sort == 'name':
@@ -94,21 +94,14 @@ class Statistic:
                 f.write(str)
                 f.write('\n'.join(self.finish))
                 f.write('\n')
-            if len(self.other) > 0:
-                f.write('\n## Others\n\n')
-                f.write(str)
-                f.write('\n'.join(self.other))
-                f.write('\n')
             f.close()
 
     def write(self, info, type):
         self.compareStat(info)
         if type == 'fin':
             self.finish.append(info)
-        elif type == 'unfinished':
-            self.unfinished.append(info)
         else:
-            self.other.append(info)
+            self.unfinished.append(info)
 
     def changeTime(self, timestamp):
         t = time.gmtime(timestamp+8*3600)
@@ -119,7 +112,7 @@ class Statistic:
     def stat(self, path, name, timestamp):
         if name.endswith('.md') and (not name.__contains__('README')):
             file = open(path, 'r', encoding='utf-8')
-            type = ''
+            type = 'unfinished'
             num = 0
             info = ''
             for i in file.readlines():
@@ -127,10 +120,6 @@ class Statistic:
                 if i.__contains__('END'):
                     type = 'fin'
             file.close()
-            if name.__contains__('摘抄'):
-                type = 'other'
-            if type == '':
-                type = 'unfinished'
             info = '|['+name[0:-3]+']('+name+')|'
             info += str(num)+'|'
             if self.sort == 'time':
