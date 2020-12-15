@@ -18,6 +18,10 @@ def autoCommit(message):
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
+    if not args.online:
+        os.system('git pull')
+    if args.push:
+        os.system('git push')
 
 
 def terminal():
@@ -50,10 +54,6 @@ if args.online:
 else:
     if args.autocommit:
         autoCommit(args.message)
-        if not args.online:
-            os.system('git pull')
-        if args.push:
-            os.system('git push')
     if args.statistic:
         import mystat
         import wc
