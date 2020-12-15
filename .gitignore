@@ -11,4 +11,5 @@
 *.ttf
 __pycache__/
 *.pyc
+*.ipynb
 .vscode/
