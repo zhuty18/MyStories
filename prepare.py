@@ -18,10 +18,6 @@ def autoCommit(message):
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
-    if not args.online:
-        os.system('git pull')
-    if args.push:
-        os.system('git push')
 
 
 def terminal():
@@ -46,22 +42,25 @@ def terminal():
 
 
 args = terminal()
-# print(args)
 path = os.getcwd() + '/' + args.workpath
 if args.online:
     import online
     online.Online(os.getcwd())
-    # import mystat
-    # mystat.WordStat(myPath, 'time')
     autoCommit('update readme')
 else:
+    if args.autocommit:
+        autoCommit(args.message)
     if args.statistic:
         import mystat
         import wc
-        mystat.WordStat(path, args.sortorder)
+        mystat.Statistic(path, args.sortorder)
         if args.wordcloud == '':
             wc.WordPic(path=path, job=me.wordCloudJob)
         else:
             wc.WordPic(path=path, job=me.wordCloudJob, file=[args.wordcloud])
     if args.autocommit:
-        autoCommit(args.message)
+        autoCommit("字数统计")
+        if not args.online:
+            os.system('git pull')
+        if args.push:
+            os.system('git push')
