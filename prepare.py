@@ -50,6 +50,10 @@ if args.online:
 else:
     if args.autocommit:
         autoCommit(args.message)
+        if not args.online:
+            os.system('git pull')
+        if args.push:
+            os.system('git push')
     if args.statistic:
         import mystat
         import wc
@@ -58,9 +62,3 @@ else:
             wc.WordPic(path=path, job=me.wordCloudJob)
         else:
             wc.WordPic(path=path, job=me.wordCloudJob, file=[args.wordcloud])
-    if args.autocommit:
-        autoCommit("字数统计")
-        if not args.online:
-            os.system('git pull')
-        if args.push:
-            os.system('git push')

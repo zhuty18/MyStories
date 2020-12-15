@@ -12,6 +12,7 @@ class Statistic:
         self.finish = []
         self.unfinished = []
         # self.other = []
+        self.former = {}
         self.path = path
         self.sort = order
         self.dir = path.replace(os.getcwd(), '')
@@ -26,7 +27,6 @@ class Statistic:
             f = open(self.path+'/README.md', 'r', encoding='utf-8')
             l = f.readlines()
             f.close()
-            self.former = {}
             for i in l:
                 if i.__contains__('.md'):
                     t = self.getStat(i)
