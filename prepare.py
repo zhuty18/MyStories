@@ -18,6 +18,10 @@ def autoCommit(message):
     mes = 'git commit -m \"'+mes+'\"'
     os.system('git add .')
     os.system(mes)
+    if not args.online:
+        os.system('git pull')
+    if args.push:
+        os.system('git push')
 
 
 def terminal():
@@ -58,9 +62,3 @@ else:
             wc.WordPic(path=path, job=me.wordCloudJob)
         else:
             wc.WordPic(path=path, job=me.wordCloudJob, file=[args.wordcloud])
-    if args.autocommit:
-        autoCommit("字数统计")
-        if not args.online:
-            os.system('git pull')
-        if args.push:
-            os.system('git push')
