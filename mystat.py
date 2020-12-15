@@ -7,15 +7,6 @@ import git
 repo = git.Repo('./')
 
 
-class WordStat:
-    dirs = []
-
-    def __init__(self, path, order):
-        WordStat.dirs.append(Statistic(path, order))
-        # for i in self.dirs:
-        #     i.writeResults()
-
-
 class Statistic:
     def __init__(self, path, order):
         self.finish = []
@@ -156,6 +147,6 @@ class Statistic:
         for i in list:
             subdir = os.path.join(path, i[0])
             if os.path.isdir(subdir) and not subdir.__contains__('参考') and not subdir.__contains__('/.'):
-                WordStat.dirs.append(Statistic(subdir, self.sort))
+                Statistic(subdir, self.sort)
             else:
                 self.stat(subdir, i[0], i[1])

@@ -42,13 +42,10 @@ def terminal():
 
 
 args = terminal()
-# print(args)
 path = os.getcwd() + '/' + args.workpath
 if args.online:
     import online
     online.Online(os.getcwd())
-    # import mystat
-    # mystat.WordStat(myPath, 'time')
     autoCommit('update readme')
 else:
     if args.autocommit:
@@ -56,7 +53,7 @@ else:
     if args.statistic:
         import mystat
         import wc
-        mystat.WordStat(path, args.sortorder)
+        mystat.Statistic(path, args.sortorder)
         if args.wordcloud == '':
             wc.WordPic(path=path, job=me.wordCloudJob)
         else:
