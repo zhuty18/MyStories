@@ -39,8 +39,7 @@ def toMD(path, name, rm):
         fi.close()
         fo.close()
     if rm:
-        # os.remove(path)
-        print(path)
+        os.remove(path)
 
 
 def getAllFiles(path, rm):
