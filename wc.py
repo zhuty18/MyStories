@@ -7,7 +7,7 @@ try:
     import matplotlib.pyplot as plt
     import matplotlib.font_manager as fm
 except ModuleNotFoundError:
-    pass
+    print('Requirements Not Found!')
 
 files = []
 
