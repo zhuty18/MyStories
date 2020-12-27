@@ -1,6 +1,6 @@
 # coding=utf-8
 import os
-from mystat import Statistic
+from utils import length
 
 
 class Online:
@@ -35,7 +35,7 @@ class Online:
             file = open(path, 'r', encoding='utf-8')
             num = 0
             for i in file.readlines():
-                num += Statistic.length(None, i.strip())
+                num += length(i.strip())
             file.close()
             before = 0
             if name in self.history.keys():

@@ -1,5 +1,5 @@
 import sys
-import mystat
+from utils import length
 
 filename = sys.argv[1]
 if not filename.endswith(".md"):
@@ -20,7 +20,7 @@ else:
                 total += num
                 num = 0
             chapter = i.strip('#').strip()
-        num += mystat.Statistic.length(None, i)
+        num += length(i)
     print(chapter+'\t'+str(num))
     total += num
     print(filename+'\t'+str(total))

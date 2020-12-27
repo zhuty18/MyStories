@@ -1,13 +1,25 @@
 # coding=utf-8
 import os
 import time
-import wc
-import git
+from wc import files
+from utils import length
 
-repo = git.Repo('./')
+
+def changeTime(timestamp):
+    t = time.gmtime(timestamp+8*3600)
+    res = str(t.tm_mon).zfill(2)+'.'+str(t.tm_mday).zfill(2) + \
+        ' '+str(t.tm_hour).zfill(2)+':'+str(t.tm_min).zfill(2)
+    return res
 
 
 class Statistic:
+    initialized = False
+
+    def staticInit(self):
+        import git
+        Statistic.repo = git.Repo('./')
+        Statistic.initialized = True
+
     def __init__(self, path, order):
         self.finish = []
         self.unfinished = []
@@ -18,6 +30,8 @@ class Statistic:
         self.dir = path.replace(os.getcwd(), '')
         self.dir = self.dir.replace('\\', '/')
         self.dir = self.dir[1:]
+        if not Statistic.initialized:
+            self.staticInit()
         self.readHistory()
         self.getAllFiles(path)
         self.writeResults()
@@ -47,24 +61,7 @@ class Statistic:
             before = self.former[t[0]]
         if before != t[1]:
             print(t[0]+'\t'+str(before)+'->'+str(t[1]))
-            wc.files.append(t[0])
-
-    def length(self, str):
-        res = 0
-        t = False
-        for i in str:
-            if i.isascii():
-                t = True
-                if i == ' ':
-                    res += 1
-            else:
-                res += 1
-                if t:
-                    res += 1
-                    t = False
-        if t:
-            res += 1
-        return res
+            files.append(t[0])
 
     def writeResults(self):
         if len(self.unfinished)+len(self.finish) > 0:
@@ -95,12 +92,6 @@ class Statistic:
         else:
             self.unfinished.append(info)
 
-    def changeTime(self, timestamp):
-        t = time.gmtime(timestamp+8*3600)
-        res = str(t.tm_mon).zfill(2)+'.'+str(t.tm_mday).zfill(2) + \
-            ' '+str(t.tm_hour).zfill(2)+':'+str(t.tm_min).zfill(2)
-        return res
-
     def stat(self, path, name, timestamp):
         if name.endswith('.md') and (not name.__contains__('README')):
             file = open(path, 'r', encoding='utf-8')
@@ -108,14 +99,14 @@ class Statistic:
             num = 0
             info = ''
             for i in file.readlines():
-                num += self.length(i.strip())
+                num += length(i.strip())
                 if i.__contains__('END'):
                     type = 'fin'
             file.close()
             info = '|['+name[0:-3]+']('+name+')|'
             info += str(num)+'|'
             if self.sort == 'time':
-                info += self.changeTime(timestamp)+'|'
+                info += changeTime(timestamp)+'|'
             self.write(info, type)
 
     def getAllFiles(self, path):
@@ -134,8 +125,8 @@ class Statistic:
                 file = file.replace('\\', '/')
                 print(file)
                 # print(repo.ignored(file))
-                if not file.__contains__('.git') and not repo.ignored(file):
-                    commit = repo.iter_commits(
+                if not file.__contains__('.git') and not self.repo.ignored(file):
+                    commit = self.repo.iter_commits(
                         paths=file, max_count=1).__next__()
                     t = commit.committed_date
                     result.append((t, item))
