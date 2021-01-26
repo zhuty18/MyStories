@@ -20,7 +20,7 @@ else:
                 total += num
                 num = 0
             chapter = i.strip('#').strip()
-        num += length(i)
+        num += length(i.strip())
     print(chapter+'\t'+str(num))
     total += num
     print(filename+'\t'+str(total))
