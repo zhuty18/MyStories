@@ -13,13 +13,13 @@ elif me.order is 'name':
 
 
 def autoCommit(message):
+    os.system('git add .')
+    if not args.online:
+        os.system('git pull')
     mes = time.strftime("%m.%d %H:%M", time.gmtime(time.time()+8*3600))+' '
     mes += message
     mes = 'git commit -m \"'+mes+'\"'
-    os.system('git add .')
     os.system(mes)
-    if not args.online:
-        os.system('git pull')
     if args.push:
         os.system('git push')
 
