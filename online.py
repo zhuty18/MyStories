@@ -8,6 +8,7 @@ class Online:
 
     def __init__(self, path):
         self.history = {}
+        self.exist = {}
         self.readHistory()
         self.statFiles(path)
         self.writeResult()
@@ -44,6 +45,7 @@ class Online:
                 self.log.append('|'+name.replace('.md', '') + '|' +
                                 str(before)+'|'+str(num)+'|'+str(num-before)+'|')
             self.history[name] = num
+            self.exist[name] = True
 
     def writeResult(self):
         f = open(os.getcwd()+'/README.md', 'w', encoding='utf-8')
@@ -64,5 +66,5 @@ class Online:
 
     def updateHistory(self):
         with open('history.txt', 'w', encoding='utf-8') as f:
-            for i in self.history.keys():
+            for i in self.exist.keys():
                 f.write(i+'\t'+str(self.history[i])+'\n')
