@@ -1,0 +1,37 @@
+name: Word Statistic
+
+on:
+  push:
+    branches:
+      - dev
+    paths-ignore:
+      - '**/README.md'
+      - 'README-**.md'
+      - '**.txt'
+      - '.gitignore'
+      - '**.py'
+      - '**.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: install
+        run: pip install gitpython
+
+      - name: prepare git
+        run: |
+          git config --global user.email zhuty18@mails.tsinghua.edu.cn
+          git config --global user.name zhuty18-ci
+          git config --global core.autocrlf input
+          git config --global core.safecrlf true
+
+      - name: Run Statistic
+        run: |
+          python3 prepare.py -t

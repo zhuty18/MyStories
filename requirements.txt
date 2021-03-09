@@ -1,0 +1,6 @@
+xpinyin
+jieba
+wordcloud
+matplotlib
+gitpython
+python_docx
