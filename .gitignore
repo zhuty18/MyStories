@@ -13,8 +13,4 @@ __pycache__/
 *.pyc
 *.ipynb
 .vscode/
-*/README.md
-*/*/README.md
-*/*/*/README.md
-*/*/*/*/README.md
-*/*/*/*/*/README.md
+*/**/README.md
