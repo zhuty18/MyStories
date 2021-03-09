@@ -6,9 +6,9 @@ import prefer as me
 
 
 otherorder = ''
-if me.order is 'time':
+if me.order == 'time':
     otherorder = 'name'
-elif me.order is 'name':
+elif me.order == 'name':
     otherorder = 'time'
 
 

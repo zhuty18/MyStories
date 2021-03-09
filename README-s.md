@@ -4,19 +4,19 @@
 
 1. 安装 python
 
-   开发使用的 python 版本是 3.7.4，在 Ubuntu20.04 上，用 python3.8 做过测试。
+   开发使用的 python 版本是 3.7.4，在 Ubuntu20.04 & Ubuntu18.04 上，用 python3.8 做过测试。
 
    请确保安装的 python 版本不低于 3.7。
 
 2. 安装依赖
 
-   执行命令`python3 -m pip install --user -r requirements.txt`即可
+   执行命令`python -m pip install --user -r requirements.txt`即可
 
 3. 根据你需要的功能运行脚本
 
 ## 主要功能
 
-执行命令`python3 prepare.py`
+执行命令`python prepare.py`
 
 在[prefer.py](./prefer.py)中进行了一些默认值的设定，请根据自己的喜好进行修改
 
@@ -61,7 +61,7 @@
 
 ## 把现有文档改变为 MarkDown 文件
 
-`python3 doc.py`
+`python doc.py`
 
 支持.doc、.docx、.txt，把其中的文本放置到同名的 MarkDown 文件中
 
@@ -73,13 +73,13 @@
 
 ## 搜索文件内容
 
-`python3 search.py [关键词]`
+`python search.py [关键词]`
 
 会在工作路径下的所有 MarkDown 中搜索给定的关键词，在终端打印出结果
 
 ## 校正换行符
 
-`python3 formatter.py`
+`python formatter.py`
 
 从根目录起，把.txt 和.md 文件中的行尾符纠正为对应操作系统的；段首尾空白字符去除
 
@@ -87,6 +87,6 @@
 
 ## 统计文件内各部分的字数
 
-`python3 file.py [filename]`
+`python file.py [filename]`
 
 根据 MarkDown 的各级标题，把文件切分为若干部分，统计每一部分的字数，并在终端打印出结果
