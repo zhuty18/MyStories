@@ -57,6 +57,8 @@ class WordPic:
                 if self.job.__contains__('s'):
                     wc.to_file(path.replace('.md', '.png'))
                 if self.job.__contains__('p'):
+                    import matplotlib
+                    matplotlib.use('TkAgg')
                     plt.imshow(wc)
                     plt.title(name.replace('.md', ''),
                               fontproperties=self.font)
