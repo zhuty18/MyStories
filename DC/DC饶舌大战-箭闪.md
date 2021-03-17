@@ -362,9 +362,9 @@ First one arrived and became Parallax
 
 最早到场就成了视差
 
-Being afraid of I knew him more, weren't ya?
+Because you were afraid of I knew him better, weren't ya?
 
-你害怕没我懂他，是不是？
+因为你害怕没我懂他，是不是？
 
 
 
