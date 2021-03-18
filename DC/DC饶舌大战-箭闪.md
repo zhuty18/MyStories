@@ -64,7 +64,7 @@ light speed is nothing
 
 光速就是个笑话
 
-and I can crush your heart in a flash
+I can take out your heart in a flash
 
 眨眼间我能把你心脏掏出来
 
@@ -92,7 +92,7 @@ for the blond sweetheart
 
 粉丝都喜欢我这样的
 
-I'm sticky like honey
+I'm slower than molasses
 
 蜜糖一样的黏糊性子
 
@@ -124,7 +124,7 @@ I'm the number one Hal ship
 
 AO3上和哈尔的同人数我第一
 
-My boy and I are the brave and the bold
+My boy and me are the brave and the bold
 
 我的男孩 英勇无畏
 
@@ -178,15 +178,15 @@ Barry's dreaming he's important
 
 巴里梦想着自己很重要
 
-well,somebody should wake him
+well, somebody should wake him
 
 谁快来叫醒他
 
-Hal stays with you for six issues
+Hal stayed with him for six issues
 
 哈尔陪你玩了六刊又怎么样
 
-does not give your money back
+did not give his money back
 
 他只是想欠钱不还
 
@@ -198,11 +198,11 @@ Fear the grumpy, wordy archer
 
 因为我一秒钟能射出的箭
 
-than the corpses piled up
+than the heaped-up corpses
 
 比你母亲活着的时间线
 
-when your mom’s alive
+when your mother was alive
 
 死得人还多
 
@@ -226,11 +226,11 @@ You're simple and naive
 
 你的世界简单幼稚
 
-with perfect solution to every problem
+with perfect solution to everything
 
 永远有完美的解决方案
 
-you wanna live like Disney Princess?
+you wanna live like a Disney Princess?
 
 想活得像迪士尼公主？
 
@@ -240,7 +240,7 @@ Please, Go find Elsa
 
 
 
-Oh,I'm the one who's naive
+Oh, I'm the one who's naive
 
 噢 我像童话故事
 
@@ -248,9 +248,9 @@ Oh,I'm the one who's naive
 
 就因为你儿子吸过毒酗过酒？
 
-After road trip of seven issues
+After road trip of forty-seven issues
 
-你和哈尔公路旅行了七刊
+你和哈尔公路旅行了四十七刊
 
 Hal still chose my side
 
@@ -326,11 +326,11 @@ and cut off the movies
 
 少看点电影吧
 
-blond, short and grumpy
+arrogant, stubborn billionaire
 
-金发个矮脾气差
+傲慢顽固的亿万富翁
 
-Hal’s type is actually me
+Hal’s type has always been me
 
 哈尔好的是我这一口
 
@@ -338,7 +338,7 @@ Your volume stars everyone else
 
 你俩的刊全是别人
 
-Alan, Jay, Carol and me
+Alan, Jay, Carol, me, even Wally
 
 阿兰杰伊卡萝我还有沃利
 
@@ -358,7 +358,7 @@ and you’re late every time
 
 结果每次你都迟到
 
-First one arrived and became Parallax
+First one arrived then became Parallax
 
 最早到场就成了视差
 
@@ -372,11 +372,11 @@ You think that's funny?
 
 你以为很逗咩？
 
-Here's a history lesson,honey
+Here's a history lesson, honey
 
 亲爱的我来给你补节历史课
 
-My comic saved the industry
+My comic was extremely popular
 
 我的漫画一举成名
 
@@ -384,15 +384,15 @@ established the Silver Age
 
 成就了整个白银时代
 
-Your 80th is for my sake
+Hard Travelling Heros is for my sake
 
-你能出80周年是托我的福
+你能和哈尔公路旅行是托我的福
 
 without me there's no you
 
 没我你早查无此人了
 
-Superheros have today
+Superheros' today
 
 超级英雄有今天
 
@@ -404,7 +404,7 @@ based on this lighting bolt on my chest
 
 If you're so adored
 
-你粉丝多你CP火
+你粉丝多 你CP火
 
 why didn’t Hal read you a Walden?
 
@@ -432,4 +432,4 @@ It's what's inside that matters
 
 nobody enjoys fairy-tale anymore
 
-这年头没人爱看过家家
+这年头没人爱看傻白甜
