@@ -8,6 +8,8 @@ def formatter(path):
         subdir = os.path.join(path, i)
         if os.path.isdir(subdir) and not subdir.__contains__('/.'):
             formatter(subdir)
+        elif subdir.__contains__('README'):
+            pass
         elif subdir.endswith('.md') or subdir.endswith('.txt') or subdir.endswith('.py'):
             f = open(subdir, 'r', encoding='utf-8')
             content = f.readlines()

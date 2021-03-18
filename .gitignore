@@ -14,3 +14,5 @@ __pycache__/
 *.ipynb
 .vscode/
 */**/README.md
+trash/
+**-2.**
