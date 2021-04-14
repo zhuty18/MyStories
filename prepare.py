@@ -34,7 +34,7 @@ def terminal():
     parser.add_argument('-s', '--statistic', type=bool,
                         default=me.wordStat, nargs='?', const=(not me.wordStat))
     parser.add_argument('-w', '--wordcloud', type=str,
-                        default='')
+                        default=me.wordCloud)
     parser.add_argument('-o', '--sortorder', type=str,
                         default=me.order, nargs='?', const=otherorder)
     parser.add_argument('-p', '--push', type=bool,
@@ -60,5 +60,7 @@ else:
         mystat.Statistic(path, args.sortorder)
         if args.wordcloud == '':
             wc.WordPic(path=path, job=me.wordCloudJob)
+        elif args.wordcloud == 'none':
+            pass
         else:
             wc.WordPic(path=path, job=me.wordCloudJob, file=[args.wordcloud])
