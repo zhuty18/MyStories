@@ -9,6 +9,7 @@ class Online:
     def __init__(self, path):
         self.history = {}
         self.exist = {}
+        self.total = 0
         self.readHistory()
         self.statFiles(path)
         self.writeResult()
@@ -45,6 +46,10 @@ class Online:
             if before != num:
                 self.log.append('|'+name.replace('.md', '') + '|' +
                                 str(before)+'|'+str(num)+'|'+str(num-before)+'|')
+                if num > before:
+                    self.total += num-before
+                else:
+                    self.total += before-num
             self.history[name] = num
             self.exist[name] = True
 

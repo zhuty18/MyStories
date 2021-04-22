@@ -49,8 +49,9 @@ args = terminal()
 path = os.getcwd() + '/' + args.workpath
 if args.online:
     import online
-    online.Online(os.getcwd())
-    autoCommit('update readme')
+    change = online.Online(os.getcwd())
+    change = change.total
+    autoCommit('update '+str(change))
 else:
     if args.autocommit:
         autoCommit(args.message)
