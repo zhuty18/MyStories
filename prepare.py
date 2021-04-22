@@ -51,7 +51,7 @@ if args.online:
     import online
     change = online.Online(os.getcwd())
     change = change.total
-    autoCommit('update '+str(change))
+    autoCommit('last change '+str(change))
 else:
     if args.autocommit:
         autoCommit(args.message)
