@@ -123,7 +123,7 @@ class Statistic:
                 subdir = os.path.join(path, item)
                 file = subdir.replace(os.getcwd(), '.')
                 file = file.replace('\\', '/')
-                print(file)
+                # print(file)
                 # print(repo.ignored(file))
                 if not file.__contains__('.git') and not self.repo.ignored(file):
                     commit = self.repo.iter_commits(
