@@ -2,8 +2,12 @@ import sys
 from utils import length
 
 filename = sys.argv[1]
-if not filename.endswith(".md"):
-    print("only support MarkDown files!")
+if filename.endswith(".txt"):
+    f=open(filename,'r',encoding='utf-8')
+    print(length(f.read()))
+    f.close()
+elif not filename.endswith(".md"):
+    print("only support plain text and MarkDown files!")
 else:
     f = open(filename, 'r', encoding='utf-8')
     filename = filename.replace('\\', '/')
