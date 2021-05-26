@@ -34,7 +34,7 @@ class Online:
                 self.stat(subdir, i)
 
     def stat(self, path, name):
-        if name.endswith('.md') and (not name.__contains__('README')):
+        if (name.endswith('.md') and (not name.__contains__('README'))) or name == "note.txt":
             file = open(path, 'r', encoding='utf-8')
             num = 0
             for i in file.readlines():
