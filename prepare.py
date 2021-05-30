@@ -1,4 +1,6 @@
 # coding=utf-8
+import sys
+sys.path.append('./scripts')
 import os
 import time
 import argparse
