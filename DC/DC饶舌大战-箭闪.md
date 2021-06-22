@@ -1,435 +1,330 @@
 # DC饶舌大战-箭闪
 
+很久很久以前
 Once upon a time
 
-很久很久以前
-
+在一个平行宇宙
 in a alternative universe
 
-在一个平行宇宙
-
+有传说中的超级英雄...
 there was a superhero...
 
-有传说中的超级英雄...
-
+饶舌对决
 RAP BATTLE
 
-饶舌对决
 
-
-
-THE FLASH
 
 闪电侠
-
-versus
+THE FLASH
 
 对战
-
-GREEN ARROW
+versus
 
 绿箭侠
-
-Let the rap battle begin
+GREEN ARROW
 
 饶舌对决 正式开始
+Let the rap battle begin
 
 
-
-Another superhero in my shadow
 
 又一个跟风的超英
-
-come to covet my crown
+Another superhero in my shadow
 
 在觊觎我的头衔
-
-You powerless wanna throw down
+come to covet my crown
 
 有超能力的真英雄
-
-with the real super power?
+You powerless wanna throw down
 
 岂是普通人能挑战？
-
-I'm the legendary story
+with the real super power?
 
 我是经典传奇
-
-of speed force
+I'm the legendary story
 
 掌握第五基本力
-
-light speed is nothing
+of speed force
 
 光速就是个笑话
-
-I can take out your heart in a flash
+light speed is nothing
 
 眨眼间我能把你心脏掏出来
-
-Like a broken bow
+I can take out your heart in a flash
 
 像把脆弱的弓
-
-you can't step to my stones
+Like a broken bow
 
 你抵挡不住我的攻势
-
-These boys are boring
+you can't step to my stones
 
 这俩小子满脸呆滞
-
-did they ever kiss a girl?
+These boys are boring
 
 上次谈恋爱是什么时候？
-
-I deserve all the praise
+did they ever kiss a girl?
 
 金发碧眼人美脾气好
-
-for the blond sweetheart
+I deserve all the praise
 
 粉丝都喜欢我这样的
-
-I'm slower than molasses
+for the blond sweetheart
 
 蜜糖一样的黏糊性子
-
-which Hal loves the best
+I'm slower than molasses
 
 哈尔就喜欢我这一点
-
-Let's look at your immaturity
+which Hal loves the best
 
 瞧你个中年愤青
-
-Call forensic scientist fascist
+Let's look at your immaturity
 
 看见公职人员就叫极右
-
-The Left Wing Radical Collection:
+Call forensic scientist fascist
 
 集社会不稳定分子于一身：
-
-You Hippie Freak
+The Left Wing Radical Collection:
 
 左翼激进嬉皮士
-
-Of course you're bitter
+You Hippie Freak
 
 你当然会嫉妒我
-
-I'm the number one Hal ship
+Of course you're bitter
 
 AO3上和哈尔的同人数我第一
-
-My boy and me are the brave and the bold
+I'm the number one Hal ship
 
 我的男孩 英勇无畏
-
-no one cares who you are
+My boy and me are the brave and the bold
 
 根本没人稀罕你
+no one cares who you are
 
 
-
-What's my name?
 
 我是谁？
-
-(Oliver Queen)
+What's my name?
 
 （Oliver Queen）
-
-What's it mean?
+(Oliver Queen)
 
 什么意思？
-
-(worst dad ever)
+What's it mean?
 
 （橄榄皇后）
-
-I'm the perfect combination
+(worst dad ever)
 
 我是内外完美组合
-
-of temper and look
+I'm the perfect combination
 
 有脾气有外表
-
-While I'm surviving Purgatory
+of temper and look
 
 我野外求生的时候
-
-you're waiting in line to see your dad
+While I'm surviving Purgatory
 
 你还在监狱门口排队见老爸
-
-Like Roy I'm fooling around
+you're waiting in line to see your dad
 
 就像罗伊对沃利
-
-and paralyzing you a month
+Like Roy I'm fooling around
 
 我随便就能收拾你
-
-Barry's dreaming he's important
+and paralyzing you a month
 
 巴里梦想着自己很重要
-
-well, somebody should wake him
+Barry's dreaming he's important
 
 谁快来叫醒他
-
-Hal stayed with him for six issues
+well, somebody should wake him
 
 哈尔陪你玩了六刊又怎么样
-
-did not give his money back
+Hal stayed with him for six issues
 
 他只是想欠钱不还
-
-Fear the grumpy, wordy archer
+did not give his money back
 
 怕我这一针见血的弓箭手
-
-'cause I'm shooting more arrow
+Fear the grumpy, wordy archer
 
 因为我一秒钟能射出的箭
-
-than the heaped-up corpses
+'cause I'm shooting more arrow
 
 比你母亲活着的时间线
-
-when your mother was alive
+than the heaped-up corpses
 
 死得人还多
-
-your tale as old as time
+when your mother was alive
 
 你那童话故事似的设定
-
-sets us back seventy years
+your tale as old as time
 
 还活在七十年前吗
-
-Your Rouges rob the banks, follow the rules,
+sets us back seventy years
 
 无赖帮只抢银行，帮规一堆
-
-what kind of villains are those
+Your Rouges rob the banks, follow the rules,
 
 不用洗就已经白了
-
-You're simple and naive
+what kind of villains are those
 
 你的世界简单幼稚
-
-with perfect solution to everything
+You're simple and naive
 
 永远有完美的解决方案
-
-you wanna live like a Disney Princess?
+with perfect solution to everything
 
 想活得像迪士尼公主？
-
-Please, Go find Elsa
+you wanna live like a Disney Princess?
 
 去找正联Elsa啊
+Please, Go find Elsa
 
 
-
-Oh, I'm the one who's naive
 
 噢 我像童话故事
-
-'cause your son was addicted to drugs and alcohol?
+Oh, I'm the one who's naive
 
 就因为你儿子吸过毒酗过酒？
-
-After road trip of forty-seven issues
+'cause your son was addicted to drugs and alcohol?
 
 你和哈尔公路旅行了四十七刊
-
-Hal still chose my side
+After road trip of forty-seven issues
 
 回来他还不是站在了我这边
-
-You points have no merit,
+Hal still chose my side
 
 你的观点站不住脚
-
-you're jealous, declare it
+You points have no merit,
 
 你在嫉妒 痛快承认
-
-Like Roy once said: it’s lucky to have me instead of you
+you're jealous, declare it
 
 像罗伊所说 生命中有我而不是你是种幸运
-
-I'm the American dream
+Like Roy once said: it’s lucky to have me instead of you
 
 我是美国梦式的伴侣
-
-with a Top Gun romance
+I'm the American dream
 
 就像壮志凌云一样
-
-You've got goatee all the time
+with a Top Gun romance
 
 你蓄着一脸山羊胡
-
-nobody said you look like Hal’s dad?
+You've got goatee all the time
 
 没人说过你看起来比哈尔老一辈吗
-
-Some things are meant to be
+nobody said you look like Hal’s dad?
 
 有些事是天注定
-
-like love at first sight
+Some things are meant to be
 
 比如一见钟情
-
-One more time Miranda Warning
+like love at first sight
 
 念上一遍米兰达警告
-
-he was mine before step out of CCPD
+One more time Miranda Warning
 
 走出警局前他就是我的了
+he was mine before step out of CCPD
 
 
-
-A relationship rookie
 
 一个情场菜鸟
-
-wants to rap about romance?
+A relationship rookie
 
 还想冒充感情专家？
-
-You can't fall in love with Hal
+wants to rap about romance?
 
 哪能连架都没吵过
-
-before you fight against him
+You can't fall in love with Hal
 
 就爱上哈尔乔丹
-
-His Lantern is in my safe
+before you fight against him
 
 他的提灯都在我这儿
-
-and cut off the movies
+His Lantern is in my safe
 
 少看点电影吧
-
-arrogant, stubborn billionaire
+and cut off the movies
 
 傲慢顽固的亿万富翁
-
-Hal’s type has always been me
+arrogant, stubborn billionaire
 
 哈尔好的是我这一口
-
-Your volume stars everyone else
+Hal’s type has always been me
 
 你俩的刊全是别人
-
-Alan, Jay, Carol, me, even Wally
+Your volume stars everyone else
 
 阿兰杰伊卡萝我还有沃利
-
-Do you have any honors?
+Alan, Jay, Carol, me, even Wally
 
 妄想用孩子勾住男人
-
-Brought a kid into this
+Do you have any honors?
 
 你还要不要脸
-
-You say you’re the fastest man alive
+Brought a kid into this
 
 你说你比光速还快
-
-and you’re late every time
+You say you’re the fastest man alive
 
 结果每次你都迟到
-
-First one arrived then became Parallax
+and you’re late every time
 
 最早到场就成了视差
-
-Because you were afraid of I knew him better, weren't ya?
+First one arrived then became Parallax
 
 因为你害怕没我懂他，是不是？
+Because you were afraid of I knew him better, weren't ya?
 
 
-
-You think that's funny?
 
 你以为很逗咩？
-
-Here's a history lesson, honey
+You think that's funny?
 
 亲爱的我来给你补节历史课
-
-My comic was extremely popular
+Here's a history lesson, honey
 
 我的漫画一举成名
-
-established the Silver Age
+My comic was extremely popular
 
 成就了整个白银时代
-
-Hard Travelling Heros is for my sake
+established the Silver Age
 
 你能和哈尔公路旅行是托我的福
-
-without me there's no you
+Hard Travelling Heros is for my sake
 
 没我你早查无此人了
-
-Superheros' today
+without me there's no you
 
 超级英雄有今天
-
-based on this lighting bolt on my chest
+Superheros' today
 
 是因为我胸前这颗闪电球
+based on this lighting bolt on my chest
 
 
-
-If you're so adored
 
 你粉丝多 你CP火
-
-why didn’t Hal read you a Walden?
+If you're so adored
 
 灯刊80周年的时候你哪儿去了
-
-I'm the origin of realistic superhero comics
+why didn’t Hal read you a Walden?
 
 我是超英漫画现实主义的开端
-
-that can't be ignored
+I'm the origin of realistic superhero comics
 
 人人都把我敬仰
-
-The moral of your absence
+that can't be ignored
 
 灯刊编剧不写你的核心
-
-and why Hal prefers me
+The moral of your absence
 
 以及哈尔更喜欢我的真谛
-
-It's what's inside that matters
+and why Hal prefers me
 
 就是内涵才最重要
-
-nobody enjoys fairy-tale anymore
+It's what's inside that matters
 
 这年头没人爱看傻白甜
+nobody enjoys fairy-tale anymore
