@@ -92,12 +92,11 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/__pycache__": true,
-    "[FMOQSXY]**": true,
+    "[FMOQSY]**": true,
     "DM": true,
     "文稿": true,
+    "X": true,
     // "translation":true
   },
   "jupyter.jupyterServerType": "local",
-  "editor.fontFamily": "Consolas",
-  "python.pythonPath": "C:\\Python\\python.exe"
 }
