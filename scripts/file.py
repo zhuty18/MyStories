@@ -3,7 +3,7 @@ from utils import length
 
 filename = sys.argv[1]
 if filename.endswith(".txt"):
-    f=open(filename,'r',encoding='utf-8')
+    f = open(filename, 'r', encoding='utf-8')
     print(length(f.read()))
     f.close()
 elif not filename.endswith(".md"):

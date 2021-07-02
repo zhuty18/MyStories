@@ -59,11 +59,12 @@ else:
         autoCommit(args.message)
     if args.statistic:
         import mystat
-        import wc
         mystat.Statistic(path, args.sortorder)
         if args.wordcloud == '':
+            import wc
             wc.WordPic(path=path, job=me.wordCloudJob)
         elif args.wordcloud == 'none':
             pass
         else:
+            import wc
             wc.WordPic(path=path, job=me.wordCloudJob, file=[args.wordcloud])

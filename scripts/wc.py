@@ -8,8 +8,7 @@ try:
     import matplotlib.font_manager as fm
 except ModuleNotFoundError:
     print('Requirements Not Found!')
-
-files = []
+from mystat import files
 
 
 class WordPic:

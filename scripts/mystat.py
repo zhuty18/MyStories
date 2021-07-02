@@ -1,8 +1,10 @@
 # coding=utf-8
 import os
 import time
-from wc import files
 from utils import length
+
+
+files = []
 
 
 def changeTime(timestamp):
