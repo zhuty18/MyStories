@@ -28,7 +28,7 @@ class Online:
         list.sort()
         for i in list:
             subdir = os.path.join(path, i)
-            if os.path.isdir(subdir):
+            if os.path.isdir(subdir) and (not subdir.__contains__("trash")):
                 self.statFiles(subdir)
             else:
                 self.stat(subdir, i)
